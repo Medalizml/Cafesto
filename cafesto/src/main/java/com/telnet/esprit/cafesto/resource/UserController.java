@@ -92,5 +92,11 @@ public class UserController {
 		return iservice.Authentication(email, password);
 	}
 	
+	@RequestMapping(value = "/findbymail", method = RequestMethod.POST, headers = "Accept=application/json")
+	public @ResponseBody
+	User find(@RequestBody String email) {
+		return iservice.findbyMail(email);
+	}
+	
 	
 }
