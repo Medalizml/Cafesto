@@ -53,6 +53,11 @@ public class UserServiceImpl implements Iservice<User> {
 		dao.delete(u);
 
 	}
+
+	public User findbyMail(String mail) {
+		// TODO Auto-generated method stub
+		return dao.findUserByMail(mail);
+	}
 	
 	
 	
