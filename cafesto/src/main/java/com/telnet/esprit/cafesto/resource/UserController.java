@@ -15,6 +15,7 @@ import com.telnet.esprit.cafesto.entity.Client;
 import com.telnet.esprit.cafesto.entity.SuperAdministrator;
 import com.telnet.esprit.cafesto.entity.User;
 import com.telnet.esprit.cafesto.service.Iservice;
+import com.telnet.esprit.cafesto.service.UserServiceImpl;
 
 @Controller
 @RequestMapping("/service")
@@ -85,5 +86,11 @@ public class UserController {
 		iservice.update(client);
 		return client;
 	}
-
+	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json")
+	public @ResponseBody
+	User authentification(@RequestBody String email, @RequestBody String password) {
+		return iservice.Authentication(email, password);
+	}
+	
+	
 }

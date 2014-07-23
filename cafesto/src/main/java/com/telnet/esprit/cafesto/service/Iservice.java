@@ -3,6 +3,8 @@ package com.telnet.esprit.cafesto.service;
 import java.io.Serializable;
 import java.util.List;
 
+import com.telnet.esprit.cafesto.entity.User;
+
 public interface Iservice<U extends Serializable> {
 	
 	public void create(U u);
@@ -11,5 +13,6 @@ public interface Iservice<U extends Serializable> {
 	public U findByid(int id);
 	public List<U> findBytype(String type);
 	public void remove(U u);
+	public User Authentication(String email, String password);
 	
 }

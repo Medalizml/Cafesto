@@ -17,19 +17,14 @@ public class UserServiceImpl implements Iservice<User> {
 
 	@Autowired
 	private UserDao dao;
-	
-	
 
-	
-	
 	public void create(User u) {
 		dao.create(u);
 	}
 
-	public String Authentication(String mail, String password) {
-		String type = null;
+	public User Authentication(String email, String password) {
 
-		return type;
+		return dao.authentifiation(email, password);
 
 	}
 
@@ -51,16 +46,13 @@ public class UserServiceImpl implements Iservice<User> {
 	}
 
 	public void update(User u) {
-		dao.update(u);	
+		dao.update(u);
 	}
 
 	public void remove(User u) {
 		dao.delete(u);
-		
-	}
 
-	
-	
+	}
 	
 	
 	
