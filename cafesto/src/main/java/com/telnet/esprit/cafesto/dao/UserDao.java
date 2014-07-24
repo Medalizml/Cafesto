@@ -4,8 +4,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.persistence.Query;
 
+
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import com.telnet.esprit.cafesto.entity.User;
@@ -29,7 +30,7 @@ public class UserDao extends GenericDaoImpl<User> implements GenericDao<User> {
 		query.setParameter("x", email);
 		query.setParameter("y", pwd);
 		try{
-			found=(User) query.getSingleResult();
+			found=(User)query.uniqueResult();
 		}catch (Exception e) {
 				Logger.getLogger(User.class.getName()).log(Level.WARNING,"failed authentification :"+ email);
 				}
@@ -41,7 +42,7 @@ public class UserDao extends GenericDaoImpl<User> implements GenericDao<User> {
 		String jpql="from User u where u.email=:x";
 		Query query =(Query) getCurrentSession().createQuery(jpql);
 		query.setParameter("x", email);
-		found=(User) query.getSingleResult();
+		found=(User) query.uniqueResult();
 		return found;
 		
 	}
