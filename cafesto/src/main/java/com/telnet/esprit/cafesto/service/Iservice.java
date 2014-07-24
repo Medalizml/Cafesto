@@ -15,6 +15,6 @@ public interface Iservice<U extends Serializable> {
 	public void remove(U u);
 	public User Authentication(String email, String password);
 	
-	public U findbyMail(String mail);
+	public boolean findbyMail(String mail);
 	
 }

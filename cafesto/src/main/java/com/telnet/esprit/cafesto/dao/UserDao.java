@@ -37,13 +37,17 @@ public class UserDao extends GenericDaoImpl<User> implements GenericDao<User> {
 		return found;
 	}
 	
-	public User findUserByMail(String email){
+	public boolean findUserByMail(String email){
+		 boolean resultat = false;
 		User found = null;
 		String jpql="from User u where u.email=:x";
 		Query query =(Query) getCurrentSession().createQuery(jpql);
 		query.setParameter("x", email);
 		found=(User) query.uniqueResult();
-		return found;
+		if(found!=null){
+			resultat=true;
+		}
+		return resultat;
 		
 	}
 

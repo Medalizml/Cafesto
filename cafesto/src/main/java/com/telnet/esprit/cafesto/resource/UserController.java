@@ -94,7 +94,8 @@ public class UserController {
 	
 	@RequestMapping(value = "/findbymail", method = RequestMethod.POST, headers = "Accept=application/json")
 	public @ResponseBody
-	User find(@RequestBody String email) {
+	boolean find(@RequestBody String email) {
+		System.out.println(email);
 		return iservice.findbyMail(email);
 	}
 	

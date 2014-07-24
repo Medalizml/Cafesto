@@ -54,7 +54,7 @@ public class UserServiceImpl implements Iservice<User> {
 
 	}
 
-	public User findbyMail(String mail) {
+	public boolean findbyMail(String mail) {
 		// TODO Auto-generated method stub
 		return dao.findUserByMail(mail);
 	}

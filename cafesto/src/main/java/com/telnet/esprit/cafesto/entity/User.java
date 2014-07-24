@@ -19,6 +19,9 @@ public class User  implements Serializable{
 	private byte[] profile ;
 	private String email;
 	private String password;
+	private boolean status;
+	private String pays;
+	private String code;
 	
 	public User() {
 		// TODO Auto-generated constructor stub
@@ -103,6 +106,36 @@ public class User  implements Serializable{
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+
+
+	public String getCode() {
+		return code;
+	}
+
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+
+	public String getPays() {
+		return pays;
+	}
+
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+
+
+	public boolean isStatus() {
+		return status;
+	}
+
+
+	public void setStatus(boolean status) {
+		this.status = status;
 	}
 	
 	
