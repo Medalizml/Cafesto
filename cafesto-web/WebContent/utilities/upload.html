@@ -9,7 +9,7 @@
         <img style="max-width: 200px;max-height: 150px;" flow-img="$flow.files[0]" id="adminprofile" src="">
     </div>
     <div >
-        <span class="btn btn-primary ng-hide" ng-show="!$flow.files.length"  flow-btn="">Select image<input type="file"></span>
+       <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn="">Select image<input type="file" style="visibility: hidden; position: absolute;"></span>
         <span class="btn btn-info" ng-show="$flow.files.length" flow-btn="">Change<input type="file" style="visibility: hidden; position: absolute;"></span>
   <span class="btn btn-danger" ng-show="$flow.files.length" ng-click="$flow.cancel()">
     Remove

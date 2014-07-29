@@ -30,7 +30,7 @@
                 <div class="control-group">
                     <label class="control-label" for="Email">Email</label>
                     <div class="controls">
-                        <input  name="email" class="form-group has-success" id="Email" type="email" value="Enter Email" required="" ng-model="admin.email">
+                        <input  name="email" class="form-group has-success" id="Email" type="email" value="Enter Email" required="" ng-model="admin.email" ng-change="verifadmin(admin.email)">
 
                         <span ng-show="adminForm.email.$dirty">
                             <span ng-show="adminForm.email.$error.required"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>

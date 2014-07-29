@@ -1,6 +1,8 @@
 package com.telnet.esprit.cafesto.resource;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -93,9 +95,11 @@ public class UserController {
 	
 	@RequestMapping(value = "/{type}/findbymail", method = RequestMethod.POST, headers = "Accept=application/json")
 	public @ResponseBody
-	String find(@RequestBody String email) {
+	Map<String, Boolean>  find(@RequestBody String email) {
 		System.out.println(email);
-		return "'"+iservice.findbyMail(email)+"'";
+		Map map = new HashMap();
+		map.put("resultat", iservice.findbyMail(email));
+		return map;
 	}
 	
 	

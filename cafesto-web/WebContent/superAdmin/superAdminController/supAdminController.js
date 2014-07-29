@@ -16,13 +16,34 @@ app.config(function($routeProvider){
         $scope.alladmins=admins.query();
 
 
+          $scope.verifadmin=function(mail){
+              console.log("testing ",mail);
+              admins.findbymail({id:'findbymail'},mail,function (Response) {
+                  $scope.test = Response.resultat;
+                  console.log("test1",$scope.test);
+                  if($scope.test==true){
+                      $scope.admin.email.$setValidity(false);
+                      console.log("test2",$scope.test);
+                      console.log("test4",$scope.admin.$valid);
+                  }else{
+                      $scope.admin.email.$setValidity(true);
+                      console.log("test4",$scope.test);
+                      console.log("test4",$scope.admin.$valid);
+                  }
+
+              })
+
+          }
+
         $scope.create=function(admin){
             if(admin.$valid){
-                if(admins.findbymail({id:'findbymail'},$scope.admin.email)=="true"){
+
+                if($scope.test==false){
+                    console.log("test2",$scope.test);
                     alert("User exsit")
                 }else
                 {
-                    console.log(admins.findbymail({id:'findbymail'},$scope.admin.email))
+                    console.log("test3",$scope.test);
                     var file = document.getElementById("adminprofile").getAttribute('src')
                     var n= file.search(",");
 
