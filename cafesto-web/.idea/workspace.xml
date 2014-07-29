@@ -26,8 +26,13 @@
       <file leaf-file-name="supAdminController.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/superAdminController/supAdminController.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.3908046" vertical-offset="0" max-vertical-offset="1360">
               <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
+=======
+            <state vertical-scroll-proportion="0.55829227" vertical-offset="102" max-vertical-offset="1700">
+              <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+>>>>>>> branch 'master' of https://medalizml@bitbucket.org/aminovish/stage-telnet.git
               <folding />
             </state>
           </provider>
@@ -46,8 +51,13 @@
       <file leaf-file-name="superAdminServices.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/superAdminServices/superAdminServices.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="0.0" vertical-offset="238" max-vertical-offset="374">
               <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+=======
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+              <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+>>>>>>> branch 'master' of https://medalizml@bitbucket.org/aminovish/stage-telnet.git
               <folding />
             </state>
           </provider>
@@ -75,6 +85,7 @@
       </file>
       <file leaf-file-name="upload.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/utilities/upload.html">
+<<<<<<< HEAD
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="459">
               <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
@@ -85,9 +96,26 @@
       </file>
       <file leaf-file-name="new.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/superadminViews/admin/new.html">
+=======
+>>>>>>> branch 'master' of https://medalizml@bitbucket.org/aminovish/stage-telnet.git
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state vertical-scroll-proportion="-51.307693" vertical-offset="502" max-vertical-offset="2193">
               <caret line="108" column="49" selection-start-line="108" selection-start-column="49" selection-end-line="108" selection-end-column="49" />
+=======
+            <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="459">
+              <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/superadminViews/admin/new.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5" vertical-offset="459" max-vertical-offset="2193">
+              <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
+>>>>>>> branch 'master' of https://medalizml@bitbucket.org/aminovish/stage-telnet.git
               <folding />
             </state>
           </provider>
@@ -110,8 +138,8 @@
         <option value="$PROJECT_DIR$/WebContent/utilities/pays.js" />
         <option value="$PROJECT_DIR$/WebContent/utilities/upload.html" />
         <option value="$PROJECT_DIR$/WebContent/utilities/upload.js" />
-        <option value="$PROJECT_DIR$/WebContent/superAdmin/superadminViews/admin/new.html" />
         <option value="$PROJECT_DIR$/WebContent/superAdmin/superAdminServices/superAdminServices.js" />
+        <option value="$PROJECT_DIR$/WebContent/superAdmin/superadminViews/admin/new.html" />
         <option value="$PROJECT_DIR$/WebContent/superAdmin/superAdminController/supAdminController.js" />
       </list>
     </option>
@@ -798,6 +826,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.17668489" vertical-offset="97" max-vertical-offset="901">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
         </state>
       </provider>
     </entry>
@@ -814,6 +843,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="459">
           <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
           <folding />
+=======
+>>>>>>> branch 'master' of https://medalizml@bitbucket.org/aminovish/stage-telnet.git
         </state>
       </provider>
     </entry>
@@ -833,10 +864,37 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/WebContent/utilities/upload.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="459">
+          <caret line="8" column="108" selection-start-line="8" selection-start-column="108" selection-end-line="8" selection-end-column="108" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+>>>>>>> branch 'master' of https://medalizml@bitbucket.org/aminovish/stage-telnet.git
     <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/superAdminServices/superAdminServices.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="14" column="36" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.576923" vertical-offset="3262" max-vertical-offset="4148">
+          <caret line="205" column="65" selection-start-line="205" selection-start-column="65" selection-end-line="205" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/superadminViews/admin/new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="459" max-vertical-offset="2193">
+          <caret line="40" column="43" selection-start-line="40" selection-start-column="43" selection-end-line="40" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -851,8 +909,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WebContent/superAdmin/superAdminController/supAdminController.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state vertical-scroll-proportion="0.3908046" vertical-offset="0" max-vertical-offset="1360">
           <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
+=======
+        <state vertical-scroll-proportion="0.55829227" vertical-offset="102" max-vertical-offset="1700">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+>>>>>>> branch 'master' of https://medalizml@bitbucket.org/aminovish/stage-telnet.git
           <folding />
         </state>
       </provider>
