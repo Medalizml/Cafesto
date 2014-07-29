@@ -36,7 +36,7 @@ public class UserController {
 	@RequestMapping(method = RequestMethod.GET, value = "/{type}/{id}", headers = "Accept=application/json")
 	public @ResponseBody
 	User getByid(@PathVariable int id) {
-		System.out.println(iservice.findByid(id).getFirstName());
+		
 		return iservice.findByid(id);
 	}
 	@RequestMapping(value = "/SuperAdministrator/{id}", method = RequestMethod.PUT, headers = "Accept=application/json")
@@ -96,7 +96,6 @@ public class UserController {
 	@RequestMapping(value = "/{type}/findbymail", method = RequestMethod.POST, headers = "Accept=application/json")
 	public @ResponseBody
 	Map<String, Boolean>  find(@RequestBody String email) {
-		System.out.println(email);
 		Map map = new HashMap();
 		map.put("resultat", iservice.findbyMail(email));
 		return map;

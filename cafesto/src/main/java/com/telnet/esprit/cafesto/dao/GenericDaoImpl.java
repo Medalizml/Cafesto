@@ -36,7 +36,7 @@ public abstract class GenericDaoImpl<T extends Serializable> implements
 	}
 
 	public void create(T t) {
-		System.out.println(t);
+		
 		this.getCurrentSession().save(t);
 	}
 

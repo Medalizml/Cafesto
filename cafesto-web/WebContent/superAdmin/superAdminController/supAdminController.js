@@ -16,25 +16,28 @@ app.config(function($routeProvider){
         $scope.alladmins=admins.query();
 
 
-          $scope.verifadmin=function(mail){
-              console.log("testing ",mail);
-              admins.findbymail({id:'findbymail'},mail,function (Response) {
-                  $scope.test = Response.resultat;
-                  console.log("test1",$scope.test);
-                  if($scope.test==true){
-                      $scope.admin.email.$setValidity(false);
-                      console.log("test2",$scope.test);
-                      console.log("test4",$scope.admin.$valid);
-                  }else{
-                      $scope.admin.email.$setValidity(true);
-                      console.log("test4",$scope.test);
-                      console.log("test4",$scope.admin.$valid);
-                  }
+    $scope.verifadmin=function(mail){
+            console.log("testing ",mail);
+            admins.findbymail({id:'findbymail'},mail,function (Response) {
+                $scope.test = Response.resultat;
+                console.log("test1",$scope.test);
+                if($scope.test==true){
+                    $scope.adminForm.email.$setValidity('exist',false);
 
-              })
+                     console.log($scope.adminForm.email);
+                    console.log("test2",$scope.test);
+                    console.log("validation",$scope.adminForm.email.$valid);
 
-          }
+                }else{
+                    $scope.adminForm.email.$setValidity('exist',true);
 
+                    console.log("test4",$scope.test);
+                    console.log("validation",$scope.adminForm.email.$valid);
+                }
+
+            })
+
+        }
         $scope.create=function(admin){
             if(admin.$valid){
 
