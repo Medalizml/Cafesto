@@ -22,6 +22,7 @@ app.config(function($routeProvider){
                     alert("User exsit")
                 }else
                 {
+                    console.log(admins.findbymail({id:'findbymail'},$scope.admin.email).$resolved)
                     console.log(admins.findbymail({id:'findbymail'},$scope.admin.email))
                     var file = document.getElementById("adminprofile").getAttribute('src')
                     var n= file.search(",");

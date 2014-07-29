@@ -95,7 +95,7 @@ public class UserController {
 	public @ResponseBody
 	String find(@RequestBody String email) {
 		System.out.println(email);
-		return "'"+iservice.findbyMail(email)+"'";
+		return iservice.findbyMail(email)+"";
 	}
 	
 	
