@@ -1,7 +1,7 @@
 /**
  * Created by AMINOVISH.B on 11/07/2014.
  */
-var app = angular.module('urls', ['ngRoute','app.services'])
+var app = angular.module('urls', ['ngRoute','app.services','paysapp','uploadapp'])
 
 
 app.config(function($routeProvider){
@@ -12,15 +12,31 @@ app.config(function($routeProvider){
 });
 
 
-    app.controller('adminControllers',['$scope','admins', function($scope,admins) {
+    app.controller('adminControllers',['$scope','admins', function($scope,admins,$flow) {
         $scope.alladmins=admins.query();
+
 
         $scope.create=function(admin){
             if(admin.$valid){
-            admins.save($scope.admin);
-                console.log("valid");
-                console.log(admin);
-            alert("done");
+                if(admins.findbymail({id:'findbymail'},$scope.admin.email)=="true"){
+                    alert("User exsit")
+                }else
+                {
+                    console.log(admins.findbymail({id:'findbymail'},$scope.admin.email))
+                    var file = document.getElementById("adminprofile").getAttribute('src')
+                    var n= file.search(",");
+
+                    $scope.admin.profile = file.substring(n+1,file.length);
+                    console.log($scope.admin.profile);
+
+
+                    admins.save($scope.admin);
+                    console.log("valid");
+                    console.log(admin);
+                    alert("done");
+
+                }
+
         }}
     }]
     );
@@ -49,6 +65,7 @@ app.directive("equals",function(){
                 // set validity
                 ngModel.$setValidity('equals', val1 === val2);
             };
+
         }
     }
 

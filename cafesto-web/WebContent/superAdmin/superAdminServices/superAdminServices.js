@@ -11,6 +11,7 @@ var services = angular.module('app.services', ['ngResource']);
 services.factory('admins', ['$resource', function($resource) {
     return $resource('../../cafesto/service/Administrator/:id',{},{
         'query':  {method:'GET', isArray:true},
-        'save':   {method:'POST'}
+        'save':   {method:'POST'},
+        'findbymail': {method:'POST'}
     });
 }]);

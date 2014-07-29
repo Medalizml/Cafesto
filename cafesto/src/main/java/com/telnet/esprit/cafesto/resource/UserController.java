@@ -49,7 +49,6 @@ public class UserController {
 	public @ResponseBody
 	User createAdmin(@RequestBody Administrator admin) {
 		admin.setSuperAdmin((SuperAdministrator) iservice.findByid(1));
-		System.out.println(admin.getSuperAdmin().getFirstName());
 		iservice.create(admin);
 		return admin;
 	}
@@ -92,11 +91,11 @@ public class UserController {
 		return iservice.Authentication(email, password);
 	}
 	
-	@RequestMapping(value = "/findbymail", method = RequestMethod.POST, headers = "Accept=application/json")
+	@RequestMapping(value = "/{type}/findbymail", method = RequestMethod.POST, headers = "Accept=application/json")
 	public @ResponseBody
-	boolean find(@RequestBody String email) {
+	String find(@RequestBody String email) {
 		System.out.println(email);
-		return iservice.findbyMail(email);
+		return "'"+iservice.findbyMail(email)+"'";
 	}
 	
 	

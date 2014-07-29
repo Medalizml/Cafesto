@@ -21,13 +21,30 @@ public class Client extends User implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	
+	
+	
+
+
+
+
 	public Client(String firstName, String lastName, String adress, String tel,
-			byte[] profile, String email, String password) {
-		super(firstName, lastName, adress, tel, profile, email, password);
-		
+			byte[] profile, String email, String password, String pays,
+			String code, boolean status) {
+		super(firstName, lastName, adress, tel, profile, email, password, pays, code,
+				status);
+		// TODO Auto-generated constructor stub
 	}
-	
-	
+
+
+
+
+
+
+
+
+
 	@OneToMany(mappedBy="client")
 	public List<EvalutionEstablishment> getClientEvalutions() {
 		return clientEvalutions;

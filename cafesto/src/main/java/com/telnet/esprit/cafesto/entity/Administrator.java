@@ -18,10 +18,17 @@ public class Administrator extends User implements Serializable {
 	private SuperAdministrator superAdmin;
 
 	
+	
+
+
+
+
 	public Administrator(String firstName, String lastName, String adress,
-			String tel, byte[] profile, String email, String password) {
-		super(firstName, lastName, adress, tel, profile, email, password);
-		
+			String tel, byte[] profile, String email, String password,
+			String pays, String code, boolean status) {
+		super(firstName, lastName, adress, tel, profile, email, password, pays, code,
+				status);
+		// TODO Auto-generated constructor stub
 	}
 
 

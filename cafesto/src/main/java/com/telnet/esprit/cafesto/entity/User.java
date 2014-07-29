@@ -29,7 +29,7 @@ public class User  implements Serializable{
 	
 	
 	public User(String firstName, String lastName, String adress, String tel,
-			byte[] profile, String email, String password) {
+			byte[] profile, String email, String password,String pays,String code,boolean status) {
 		
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -38,6 +38,9 @@ public class User  implements Serializable{
 		this.profile = profile;
 		this.email = email;
 		this.password = password;
+		this.pays=pays;
+		this.code=code;
+		this.status=status;
 	}
 
 
