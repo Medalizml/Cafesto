@@ -35,6 +35,7 @@
                         <span ng-show="adminForm.email.$dirty">
                             <span ng-show="adminForm.email.$error.required"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
                             <span ng-show="adminForm.email.$error.email"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">L'email n'est pas correct</span>
+                            <span ng-show="adminForm.email.$error.exist"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">this user exists</span>
                          </span>
                     </div>
                 </div>
@@ -44,8 +45,8 @@
                     <div class="controls">
                     <input  name="password" type="password" class="form-control" id="Password" placeholder="Password" ng-model="admin.password" ng-minlength="6" required="" equals="{{admin1.password2}}">
                        <span ng-show="adminForm.password.$dirty">
-                                    <span ng-show="adminForm.password.$error.required">Champs obligatoire</span>
-                                    <span ng-show="adminForm.password.$error.minlength">At least 6 characters</span>
+                                    <span ng-show="adminForm.password.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="adminForm.password.$error.minlength" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">At least 6 characters</span>
                                 </span>
 
                     </div>
@@ -55,7 +56,7 @@
                     <div class="controls">
                     <input  name="password2" type="password" class="form-control" id="Passwordverif" placeholder="Confirm password"   required="" equals="{{admin.password}}" ng-model="admin1.password2">
                     <span ng-show="adminForm.password2.$dirty">
-                        <span class="msg-error" ng-show="adminForm.password2.$error.equals">
+                        <span class="msg-error" ng-show="adminForm.password2.$error.equals" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">
 		                    Passwords don't match.
 	                        </span>
 
@@ -68,11 +69,11 @@
 
 
                             <div class="controls" >
-                        <select   ng-model="choixpays" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country as country.name for country in pays.cast"  ng-change="selectAction(choixpays)">
 
+                        <select ng-init="MyCountry=pays.cast[aaa]" ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)">
                         </select>
                                     <span ng-show="adminForm.pays.$dirty">
-                                    <span ng-show="adminForm.pays.$error.required">Champs obligatoire</span>
+                                    <span ng-show="adminForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
 
                                 </span>
 
@@ -81,13 +82,13 @@
                 <div class="control-group">
                     <label  class="control-label" for="Telephone" >Telephone</label>
                     <div class="controls">
-                        <input ng-model="admin.code" name="code"  id="code" class="form-control" />
+                        <input ng-model="admin.code" name="code"  id="code" class="form-control" type="text" disabled  />
 
 
                         <input  name="telephone"class="form-group has-success" id="telephone" type="text" placeholder="Enter phone number " ng-model="admin.tel" ng-pattern="/[0-9]{8}$/" required="">
                                 <span ng-show="adminForm.telephone.$dirty">
-                                    <span ng-show="adminForm.telephone.$error.required">Champs obligatoire</span>
-                                    <span ng-show="adminForm.telephone.$error.pattern">The  phone number must contains 8 numbers</span>
+                                    <span ng-show="adminForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="adminForm.telephone.$error.pattern" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">The  phone number must contains 8 numbers</span>
                                 </span>
                         </div>
                     </div>
@@ -102,16 +103,14 @@
                 </div>
                 <div class="control-group">
 
-                    <label  class="control-label"for="exampleInputFile">File input</label>
-                    <div class="controls">
-                    <input class="form-group has-success" type="file" id="exampleInputFile" ng-model="admin.profile">
-                    </div>
+
+
                     <ng-include src="'../utilities/upload.html'"/>
-                    <p class="help-block">Example block-level help text here.</p>
+
                 </div>
                 <div class="checkbox">
                     <label>
-                        <input type="checkbox"> Check me out
+                        <input type="checkbox" ng-model="admin.status"> Activate administrator
                     </label>
                 </div>
                 <button type="submit" class="btn btn-default" ng-disabled="adminForm.$invalid" ng-click="">Submit</button>

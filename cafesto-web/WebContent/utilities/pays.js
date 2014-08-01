@@ -44,7 +44,6 @@ var paysapp=angular.module('paysapp',[])
     "name":"Central African Republic","dial_code":"+236","code":"CF"},
     {"name":"Chad","dial_code":"+235","code":"TD"},
     {"name":"Chile","dial_code":"+56","code":"CL"},
-
     {"name":"China","dial_code":"+86","code":"CN"},
     {"name":"Christmas Island","dial_code":"+61","code":"CX"},
     {"name":"Cocos (Keeling) Islands","dial_code":"+61","code":"CC"},
@@ -175,9 +174,17 @@ var paysapp=angular.module('paysapp',[])
 
 function paysCtrl($scope ,countries){
     $scope.pays= countries;
+    $scope.countryindex=function(code){
+        for(var i;i<$scope.pays.$length;i++){
+            if($scope.pays[i].dial_code===code){
+                var indice=i;
+                return indice;
+            }
 
+        }
+    }
     $scope.selectAction = function(country) {
-        //console.log(country);
+
         $scope.admin.pays=country.name;
         $scope.admin.code=country.dial_code;
 
@@ -185,4 +192,6 @@ function paysCtrl($scope ,countries){
         console.log($scope.admin);
 
     };
+
+
 }

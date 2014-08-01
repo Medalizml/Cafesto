@@ -8,31 +8,32 @@ app.config(function($routeProvider){
     $routeProvider.when('/', {templateUrl: '../superAdmin/superadminViews/dashbord.html', controller: 'adminControllers'});
     $routeProvider.when('/test', {templateUrl: '../superAdmin/superadminViews/test.html', controller: 'adminControllers'});
     $routeProvider.when('/new', {templateUrl: '../superAdmin/superadminViews/admin/new.html', controller: 'adminControllers'});
+    $routeProvider.when('/update/:id', {templateUrl: '../superAdmin/superadminViews/admin/new.html', controller: 'adminControllers'});
 
 });
 
 
-    app.controller('adminControllers',['$scope','admins', function($scope,admins,$flow) {
+    app.controller('adminControllers',['$scope','$routeParams','admins','$location', function($scope,$routeParams,admins,$location) {
         $scope.alladmins=admins.query();
+            if($routeParams.id!=null){
+                $scope.admin = admins.get({id: $routeParams.id})
+            }
 
 
     $scope.verifadmin=function(mail){
-            console.log("testing ",mail);
+
             admins.findbymail({id:'findbymail'},mail,function (Response) {
                 $scope.test = Response.resultat;
-                console.log("test1",$scope.test);
+
                 if($scope.test==true){
                     $scope.adminForm.email.$setValidity('exist',false);
 
-                     console.log($scope.adminForm.email);
-                    console.log("test2",$scope.test);
-                    console.log("validation",$scope.adminForm.email.$valid);
+
 
                 }else{
                     $scope.adminForm.email.$setValidity('exist',true);
 
-                    console.log("test4",$scope.test);
-                    console.log("validation",$scope.adminForm.email.$valid);
+
                 }
 
             })
@@ -41,28 +42,43 @@ app.config(function($routeProvider){
         $scope.create=function(admin){
             if(admin.$valid){
 
-                if($scope.test==false){
-                    console.log("test2",$scope.test);
-                    alert("User exsit")
-                }else
-                {
-                    console.log("test3",$scope.test);
+
+
                     var file = document.getElementById("adminprofile").getAttribute('src')
                     var n= file.search(",");
 
                     $scope.admin.profile = file.substring(n+1,file.length);
-                    console.log($scope.admin.profile);
+
 
 
                     admins.save($scope.admin);
-                    console.log("valid");
-                    console.log(admin);
-                    alert("done");
+                $location.path('/');
 
-                }
+
 
         }}
-    }]
+            $scope.editAdmin = function (admin) { // callback for ng-click 'updateUser':
+                if(admin.$valid) {
+                    var file = document.getElementById("adminprofile").getAttribute('src')
+                    var n= file.search(",");
+
+                    $scope.admin.profile = file.substring(n+1,file.length);
+
+
+                        admins.update($scope.admin);
+                        $location.path('/');
+
+
+
+                }
+            };
+            $scope.editUser = function (userId) {
+
+                $location.path('/update/' + userId);
+            };
+
+
+        }]
     );
 app.directive("equals",function(){
     return {

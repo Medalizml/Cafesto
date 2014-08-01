@@ -22,13 +22,3 @@ var appupload = angular.module('uploadapp', ['flow'])
     }]);
 
 
-function FilesCtrl($scope ) {
-
-    $scope.$on('flow::filesSubmitted', function (event, $flow, flowFile) {
-
-
-
-});
-
-
-}
