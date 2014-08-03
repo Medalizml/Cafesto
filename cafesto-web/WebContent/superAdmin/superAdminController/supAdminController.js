@@ -17,7 +17,10 @@ app.config(function($routeProvider){
         $scope.alladmins=admins.query();
             if($routeParams.id!=null){
                 $scope.admin = admins.get({id: $routeParams.id})
+
             }
+
+
 
 
     $scope.verifadmin=function(mail){
@@ -39,6 +42,7 @@ app.config(function($routeProvider){
             })
 
         }
+
         $scope.create=function(admin){
             if(admin.$valid){
 

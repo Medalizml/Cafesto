@@ -3352,6 +3352,7 @@ input[type="button"].btn-block {
 .btn-warning.active,
 .btn-danger.active,
 .btn-success.active,
+.btn-view.active,
 .btn-info.active,
 .btn-inverse.active {
   color: rgba(255, 255, 255, 0.75);

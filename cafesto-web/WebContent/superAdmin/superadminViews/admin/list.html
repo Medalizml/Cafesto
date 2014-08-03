@@ -31,14 +31,26 @@
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 50px;">Status</th></tr>
                 </thead>
 
-                <tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="gradeA odd" ng-repeat="admin in alladmins" ng-click="editUser(admin.id)">
+                <tbody role="alert" aria-live="polite" aria-relevant="all"  ng-repeat="admin in alladmins"><tr class="gradeA odd" ng-click="listaffiche=!listaffiche">
                     <td class=" sorting_1">{{admin.firstName}}</td>
                     <td class=" ">{{admin.lastName}}</td>
                     <td class=" ">{{admin.email}}</td>
                     <td class="center ">{{admin.tel}}</td>
                     <td class="center ">{{admin.adress}}</td>
-                    <td class="center ">*********</td>
+                    <td class="center ">{{admin.status}}</td>
+
                 </tr>
+                <tr>
+                    <td colspan="6"  align=center >
+                        <button class="btn btn-info"  ng-show="listaffiche" style="width: 200px" >view Administrator profile</button>
+                        <button class="btn btn-primary"  ng-show="listaffiche" style="width: 150px" >edit user</button>
+
+                        <button class="btn btn-success" ng-show="listaffiche"style="width: 175px" >activate user </button>
+                    <button class="btn btn-warning" ng-show="listaffiche"style="width: 175px" >Inactivate user </button>
+                    <button class="btn btn-danger" ng-show="listaffiche" style="width: 150px" >delete user</button></td>
+
+                </tr>
+
                 </tbody></table><div class="row"><div class="span6"><div class="dataTables_info" id="example2_info">Showing 1 to 10 of 57 entries</div></div><div class="span6"><div class="dataTables_paginate paging_bootstrap pagination"><ul><li class="prev disabled"><a href="#">Previous</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li><li><a href="#">4</a></li><li><a href="#">5</a></li><li class="next"><a href="#">Next</a></li></ul></div></div></div></div>
         </div>
     </div>

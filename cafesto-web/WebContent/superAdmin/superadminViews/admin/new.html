@@ -70,7 +70,7 @@
 
                             <div class="controls" >
 
-                        <select ng-init="MyCountry=pays.cast[aaa]" ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)">
+                        <select ng-init="MyCountry=countryindex()" ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)">
                         </select>
                                     <span ng-show="adminForm.pays.$dirty">
                                     <span ng-show="adminForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
