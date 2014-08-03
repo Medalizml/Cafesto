@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.telnet.esprit.cafesto.entity.Administrator;
 import com.telnet.esprit.cafesto.entity.Client;
+import com.telnet.esprit.cafesto.entity.ServiceProvider;
 import com.telnet.esprit.cafesto.entity.SuperAdministrator;
 import com.telnet.esprit.cafesto.entity.User;
 import com.telnet.esprit.cafesto.service.Iservice;
@@ -87,6 +88,24 @@ public class UserController {
 		iservice.update(client);
 		return client;
 	}
+	
+	@RequestMapping(value = "/ServiceProvider", method = RequestMethod.POST, headers = "Accept=application/json")
+	public @ResponseBody
+	User createServiceProvider(@RequestBody ServiceProvider user) {
+
+		iservice.create(user);
+		return user;
+	}
+	@RequestMapping(value = "/ServiceProvider/{id}", method = RequestMethod.PUT, headers = "Accept=application/json")
+	public @ResponseBody
+	User ServiceProvider(@RequestBody ServiceProvider client, @PathVariable int id) {
+		client.setId(id);
+
+		iservice.update(client);
+		return client;
+	}
+	
+	
 	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json")
 	public @ResponseBody
 	User authentification(@RequestBody String email, @RequestBody String password) {
