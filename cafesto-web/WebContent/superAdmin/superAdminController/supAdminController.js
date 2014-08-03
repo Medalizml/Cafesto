@@ -13,7 +13,7 @@ app.config(function($routeProvider){
 });
 
 
-    app.controller('adminControllers',['$scope','$routeParams','admins','$location', function($scope,$routeParams,admins,$location) {
+app.controller('adminControllers',['$scope','$routeParams','admins','$location', function($scope,$routeParams,admins,$location) {
         $scope.alladmins=admins.query();
             if($routeParams.id!=null){
                 $scope.admin = admins.get({id: $routeParams.id})

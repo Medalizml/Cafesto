@@ -193,12 +193,14 @@ function paysCtrl($scope ,countries){
     }
     $scope.selectAction = function(country) {
 
+        if($scope.admin!=null){
         $scope.admin.pays=country.name;
         $scope.admin.code=country.dial_code;
-
-
-
-        console.log($scope.admin);
+        }
+        if($scope.sp!=null){
+            $scope.sp.pays=country.name;
+            $scope.sp.code=country.dial_code;
+        }
 
     };
 
