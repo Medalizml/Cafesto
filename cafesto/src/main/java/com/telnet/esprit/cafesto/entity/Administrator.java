@@ -48,7 +48,7 @@ public class Administrator extends User implements Serializable {
 	}
 
 
-	@ManyToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.MERGE)
 	public SuperAdministrator getSuperAdmin() {
 		return superAdmin;
 	}

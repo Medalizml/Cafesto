@@ -232,10 +232,7 @@ body{
 	-o-transition:0.5s all;
 	display: inline-block;
 }
-.btn:hover{
-	color:#484848;
-	border:2px solid #484848;
-}
+
 .feature-grid {
 	padding: 3em 0;
 	border-bottom: 1px solid #E6E3E3;
