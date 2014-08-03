@@ -13,6 +13,7 @@ services.factory('admins', ['$resource', function($resource) {
         'query':  {method:'GET', isArray:true},
         'save':   {method:'POST'},
         'findbymail': {method:'POST'},
-        'update ': {method:'PUT',params: {id: '@id'}}
+        'update': {method:'PUT',params: {id: '@id'}},
+        'delete': { method: 'DELETE', params: {id: '@id'} }
     });
 }]);

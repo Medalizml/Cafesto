@@ -6,7 +6,7 @@
         <div class="span12">
             <!-- BEGIN FORM-->
             <div ng-controller="adminControllers">
-                <form role="form" class="form-horizontal" name="adminForm"  ng-submit="create(adminForm)"novalidate="">
+                <form role="form" class="form-horizontal" name="adminForm"  ng-submit="editAdmin()"novalidate="">
                     <div class="control-group" >
                         <label class="control-label" for="Firstname">First name</label>
                         <div class="controls">
@@ -46,8 +46,10 @@
 
 
                             <div class="controls" >
-                                <input class="form-group has-success" type="text" ng-model="admin.pays">
-                                <select ng-init="MyCountry=pays.cast[2]" ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)">
+
+                                <input class="form-group has-success" type="text" ng-model="admin.pays" disabled >
+                                <button class="btn" ng-click="countryAffiche=true" >Click if you want to change Admin's Country</button >
+                                <select  ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)"ng-show="countryAffiche"  >
                                 </select>
                                     <span ng-show="adminForm.pays.$dirty">
                                     <span ng-show="adminForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>

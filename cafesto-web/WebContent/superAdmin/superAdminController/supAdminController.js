@@ -8,7 +8,7 @@ app.config(function($routeProvider){
     $routeProvider.when('/', {templateUrl: '../superAdmin/superadminViews/dashbord.html', controller: 'adminControllers'});
     $routeProvider.when('/test', {templateUrl: '../superAdmin/superadminViews/test.html', controller: 'adminControllers'});
     $routeProvider.when('/new', {templateUrl: '../superAdmin/superadminViews/admin/new.html', controller: 'adminControllers'});
-    $routeProvider.when('/update/:id', {templateUrl: '../superAdmin/superadminViews/admin/new.html', controller: 'adminControllers'});
+    $routeProvider.when('/update/:id', {templateUrl: '../superAdmin/superadminViews/admin/update.html', controller: 'adminControllers'});
 
 });
 
@@ -61,8 +61,8 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
 
 
         }}
-            $scope.editAdmin = function (admin) { // callback for ng-click 'updateUser':
-                if(admin.$valid) {
+            $scope.editAdmin = function () { // callback for ng-click 'updateUser':
+                if($scope.adminForm.$valid) {
                     var file = document.getElementById("adminprofile").getAttribute('src')
                     var n= file.search(",");
 
@@ -71,16 +71,38 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
 
                         admins.update($scope.admin);
                         $location.path('/');
-
+                    console.log($scope.admin);
 
 
                 }
             };
-            $scope.editUser = function (userId) {
+        $scope.deleteUser = function (userId) {
+            admins.delete({ id: userId });
+            $scope.alladmins=admins.query();
+        };
+
+        $scope.editUser = function (userId) {
 
                 $location.path('/update/' + userId);
             };
+        $scope.activateUser=function(admin){
 
+            console.log(admin)
+            $scope.activeadmin=admin
+            admin.status=true;
+            console.log($scope.activeadmin)
+
+            admins.update($scope.activeadmin);
+        }
+        $scope.InactivateUser=function(admin){
+
+            console.log(admin)
+            $scope.activeadmin=admin
+            admin.status=false;
+            console.log($scope.activeadmin)
+
+            admins.update($scope.activeadmin);
+        }
 
         }]
     );

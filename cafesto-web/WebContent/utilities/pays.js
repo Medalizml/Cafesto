@@ -174,10 +174,10 @@ var paysapp=angular.module('paysapp',[])
 
 function paysCtrl($scope ,countries){
     $scope.pays= countries;
-    var code=$scope.admin.code
-    console.log($scope.admin);
-    console.log($scope.admin.code);
-    console.log($scope.admin.lasName)
+  //  var code=$scope.admin.code
+   // console.log($scope.admin);
+   // console.log($scope.admin.code);
+    // console.log($scope.admin.lasName)
 
     $scope.countryindex=function(){
 
@@ -192,7 +192,7 @@ function paysCtrl($scope ,countries){
 
     }
     $scope.selectAction = function(country) {
-
+        console.log($scope.admin);
         if($scope.admin!=null){
         $scope.admin.pays=country.name;
         $scope.admin.code=country.dial_code;
