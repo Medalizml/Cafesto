@@ -47,9 +47,9 @@
 
                             <div class="controls" >
 
-                                <input class="form-group has-success" type="text" ng-model="admin.pays" disabled >
+                                <input class="form-group has-success" type="text" ng-model="admin.pays" disabled requiredd >
                                 <button class="btn" ng-click="countryAffiche=true" >Click if you want to change Admin's Country</button >
-                                <select  ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)"ng-show="countryAffiche"  >
+                                <select  ng-model="MyCountry" name="pays" class="form-control" id="country" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)"ng-show="countryAffiche"  >
                                 </select>
                                     <span ng-show="adminForm.pays.$dirty">
                                     <span ng-show="adminForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>

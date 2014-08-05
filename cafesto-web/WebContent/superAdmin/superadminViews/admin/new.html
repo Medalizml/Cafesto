@@ -12,7 +12,7 @@
                     <div class="controls">
                         <input name="Firstname" class="form-group has-success" id="Firstname" type="text" value="Enter  First name" required="" ng-model="admin.firstName"  >
                             <span ng-show="adminForm.Firstname.$dirty">
-                             <span ng-show="adminForm.Firstname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                             <span ng-show="adminForm.Firstname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">This Field is Required</span>
                             </span>
                     </div>
 
@@ -23,7 +23,7 @@
                     <div class="controls">
                         <input  name="Lastname" class="form-group has-success" id="Last name" type="text" value="Enter  last name" required="" ng-model="admin.lastName">
                      <span ng-show="adminForm.Lastname.$dirty">
-                             <span ng-show="adminForm.Lastname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                             <span ng-show="adminForm.Lastname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">This Field is Required</span>
                             </span>
                     </div>
                 </div>
@@ -33,9 +33,9 @@
                         <input  name="email" class="form-group has-success" id="Email" type="email" value="Enter Email" required="" ng-model="admin.email" ng-change="verifadmin(admin.email)">
 
                         <span ng-show="adminForm.email.$dirty">
-                            <span ng-show="adminForm.email.$error.required"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
-                            <span ng-show="adminForm.email.$error.email"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">L'email n'est pas correct</span>
-                            <span ng-show="adminForm.email.$error.exist"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">this user exists</span>
+                            <span ng-show="adminForm.email.$error.required"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Email is required</span>
+                            <span ng-show="adminForm.email.$error.email"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Email is not correct</span>
+                            <span ng-show="adminForm.email.$error.exist"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">This email already exists</span>
                          </span>
                     </div>
                 </div>
@@ -45,7 +45,7 @@
                     <div class="controls">
                     <input  name="password" type="password" class="form-control" id="Password" placeholder="Password" ng-model="admin.password" ng-minlength="6" required="" equals="{{admin1.password2}}">
                        <span ng-show="adminForm.password.$dirty">
-                                    <span ng-show="adminForm.password.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="adminForm.password.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Password is required</span>
                                     <span ng-show="adminForm.password.$error.minlength" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">At least 6 characters</span>
                                 </span>
 
@@ -80,14 +80,14 @@
                             </div>
                             </div>
                 <div class="control-group">
-                    <label  class="control-label" for="Telephone" >Telephone</label>
+                    <label  class="control-label" for="Telephone" >Phone</label>
                     <div class="controls">
                         <input ng-model="admin.code" name="code"  id="code" class="form-control" type="text" disabled  />
 
 
                         <input  name="telephone"class="form-group has-success" id="telephone" type="text" placeholder="Enter phone number " ng-model="admin.tel" ng-pattern="/[0-9]{8}$/" required="">
                                 <span ng-show="adminForm.telephone.$dirty">
-                                    <span ng-show="adminForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="adminForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Phone number is required</span>
                                     <span ng-show="adminForm.telephone.$error.pattern" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">The  phone number must contains 8 numbers</span>
                                 </span>
                         </div>

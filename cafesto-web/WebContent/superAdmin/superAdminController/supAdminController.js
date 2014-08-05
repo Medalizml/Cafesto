@@ -62,6 +62,7 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
 
         }}
             $scope.editAdmin = function () { // callback for ng-click 'updateUser':
+
                 if($scope.adminForm.$valid) {
                     var file = document.getElementById("adminprofile").getAttribute('src')
                     var n= file.search(",");
@@ -103,6 +104,16 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
 
             admins.update($scope.activeadmin);
         }
+
+            $scope.numbers = [
+                {ID: '10'},
+                {ID: '25'},
+                {ID: '50'},
+                {ID: '100'}
+            ];
+
+
+
 
         }]
     );

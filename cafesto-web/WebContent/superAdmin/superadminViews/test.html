@@ -1,7 +1,12 @@
 <h1>Admin</h1>
-
+        <div class="progress">
+<div style="width: 60%;" class="bar"></div></div>
 <ul ng-repeat="admin in alladmins">
     <li>{{admin.id}}</li>
 
 
 </ul>
+ <script>
+
+     $('.progress .bar').progressbar();
+ </script>

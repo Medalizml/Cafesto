@@ -106,7 +106,7 @@
                     <div class="controls">
                         <input name="nameProvider" class="form-group has-success" id="nameProvider" type="text" value="Enter  First name" required="" ng-model="sp.nameProvider"  >
                             <span ng-show="spForm.nameProvider.$dirty">
-                             <span ng-show="spForm.nameProvider.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                             <span ng-show="spForm.nameProvider.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Name Provider is Requird</span>
                             </span>
                     </div>
 
@@ -159,21 +159,21 @@
                         <select  ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)">
                         </select>
                                     <span ng-show="spForm.pays.$dirty">
-                                    <span ng-show="spForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="spForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Country is Required</span>
 
                                 </span>
 
                             </div>
                             </div>
                 <div class="control-group">
-                    <label  class="control-label" for="Telephone" >Telephone</label>
+                    <label  class="control-label" for="Telephone" >Phone</label>
                     <div class="controls">
                         <input ng-model="sp.code" name="code"  id="code" class="form-control" type="text" disabled  />
 
 
                         <input  name="telephone"class="form-group has-success" id="telephone" type="text" placeholder="Enter phone number " ng-model="sp.tel" ng-pattern="/[0-9]{8}$/" required="">
                                 <span ng-show="spForm.telephone.$dirty">
-                                    <span ng-show="spForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="spForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Phone number is required</span>
                                     <span ng-show="spForm.telephone.$error.pattern" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">The  phone number must contains 8 numbers</span>
                                 </span>
                         </div>
