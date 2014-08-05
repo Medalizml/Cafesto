@@ -3,7 +3,7 @@
  */
 
 
-var services = angular.module('app.spservices', ['ngResource']);
+var services = angular.module('appWeb.spservices', ['ngResource']);
 
 services.factory('serviceProvider', ['$resource', function($resource) {
     return $resource('../../cafesto/service/ServiceProvider/:id',{},{

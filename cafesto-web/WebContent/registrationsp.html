@@ -1,112 +1,12 @@
-<!DOCTYPE HTML>
-<html ng-app="spApp">
-<head>
-<title>Webworld website for high end mobiles,like samsung nokia
-	mobile website templates for free | Home :: w3layouts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-</script>
-    <link href="lib/css/style1.css" rel="stylesheet" type="text/css"
-    media="all" />
-<link href='http://fonts.googleapis.com/css?family=Pacifico'
-	rel='stylesheet' type='text/css'>
-<link href="lib/css/animate.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="lib/js/active.js"></script>
-<script type="text/javascript" src="lib/js/jquery.min.js"></script>
-<!---strat-slider---->
-<link rel="stylesheet" type="text/css" href="lib/css/style2.css" />
-<script type="text/javascript" src="lib/js/modernizr.custom.28468.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="lib/bootstrap/css/bootstrap.css" />
-<script src="lib/bootstrap/js/bootstrap.js"></script>
-<!---//strat-slider---->
-<!-- FancyBox -->
-<!-- CSS -->
-<link rel="stylesheet" href="lib/css/jquery.fancybox-buttons.css">
-<link rel="stylesheet" href="lib/css/jquery.fancybox-thumbs.css">
-<link rel="stylesheet" href="lib/css/jquery.fancybox.css">
-<!-- FancyBox -->
-</head>
-<body>
-	<!---start-wrap---->
-	<!--start-header---->
-	<div class="header">
-		<div class="wrap">
-			<!--start-top-nav---->
-			<div class="top-header animated bounceInDown">
-				<!---start-logo---->
-				<div class="logo">
-					<a href="index.html"><img src="lib/img/logo.png"
-						title="Cafesto" /></a>
-				</div>
-				<!---End-logo---->
-				<!---start-top-nav---->
-				<div class="top-nav" id="navigation">
-					<ul>
-						<li>
-						<li><a href="index.html">Home</a></li>
-						<li><a href="protfolio.html">Porfolio</a></li>
-						<li><a href="contact.html">Contact</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#mymodal">Sign
-								Up</a></li>
-
-						<div class="clear"></div>
-						</li>
-					</ul>
-				</div>
-				<div class="clear"></div>
-			</div>
-			<!---//End-top-nav---->
-			<!--End-top-nav---->
-			<!---start-da-slider----->
-			<div id="da-slider" class="da-slider">
-				<div class="da-slide">
-					<h2>Clean,Flat & poloshed Design</h2>
-					<p>Proin facilisis aliquam nunc quis varius</p>
-					<a href="#" class="da-link">Show more</a>
-				</div>
-				<div class="da-slide">
-					<h2>Clean,Flat & poloshed Design</h2>
-					<p>Proin facilisis aliquam nunc quis varius</p>
-					<a href="#" class="da-link">Show more</a>
-				</div>
-				<div class="da-slide">
-					<h2>Clean,Flat & poloshed Design</h2>
-					<p>Proin facilisis aliquam nunc quis varius</p>
-					<a href="#" class="da-link">Show more</a>
-				</div>
-				<nav class="da-arrows">
-					<span class="da-arrows-prev"></span> <span class="da-arrows-next"></span>
-				</nav>
-			</div>
-			<script type="text/javascript"
-				src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-			<script type="text/javascript" src="lib/js/jquery.cslider.js"></script>
-			<script type="text/javascript">
-            $(function() {
-
-                $('#da-slider').cslider({
-                    autoplay	: true,
-                    bgincrement	: 450
-                });
-
-            });
-        </script>
-			<!---//End-da-slider----->
-		</div>
-		<!--//End-header---->
-	</div>
-	<!---strat-content---->
-	<div class="content">
-		<div class="wrap" ng-controller="ServiceProviderControllers">
-		<h1>Registration Service Provider</h1>
-		<form role="form" class="form-horizontal" name="spForm"  ng-submit="create(spForm)" novalidate="">
+<div ng-controller="ServiceProviderControllers">
+        <h1>Registration Service Provider</h1>
+        <form role="form" class="form-horizontal" name="spForm"  ng-submit="create(spForm)" novalidate="">
                 <div class="control-group" >
                     <label class="control-label" for="nameProvider">Name Provider</label>
                     <div class="controls">
                         <input name="nameProvider" class="form-group has-success" id="nameProvider" type="text" value="Enter  First name" required="" ng-model="sp.nameProvider"  >
                             <span ng-show="spForm.nameProvider.$dirty">
-                             <span ng-show="spForm.nameProvider.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                             <span ng-show="spForm.nameProvider.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Name Provider is Required</span>
                             </span>
                     </div>
 
@@ -166,14 +66,14 @@
                             </div>
                             </div>
                 <div class="control-group">
-                    <label  class="control-label" for="Telephone" >Telephone</label>
+                    <label  class="control-label" for="Telephone" >Phone</label>
                     <div class="controls">
                         <input ng-model="sp.code" name="code"  id="code" class="form-control" type="text" disabled  />
 
 
                         <input  name="telephone"class="form-group has-success" id="telephone" type="text" placeholder="Enter phone number " ng-model="sp.tel" ng-pattern="/[0-9]{8}$/" required="">
                                 <span ng-show="spForm.telephone.$dirty">
-                                    <span ng-show="spForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="spForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Phone number is required</span>
                                     <span ng-show="spForm.telephone.$error.pattern" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">The  phone number must contains 8 numbers</span>
                                 </span>
                         </div>
@@ -198,134 +98,4 @@
                 <button type="submit" class="btn btn-default" ng-disabled="spForm.$invalid" ng-click="">Submit</button>
             </form>
 
-		</div>
-	</div>
-	<!---End-content---->
-	<!---strat-footer--->
-	<div class="footer">
-		<div class="wrap">
-			<div class="footer-grid footer-grid1">
-				<h4>
-					<a href="#"><img src="lib/img/flogo.png" alt="" /></a>
-				</h4>
-				<p>There are many variations of passages of Lorem Ipsum
-					available, but the majority have suffered alteration in some form,
-					by injected humour, or randomised words which don't look even
-					slightly believable. If you are going to use a passage</p>
-			</div>
-			<div class="footer-grid footer-grid2">
-				<h4>Contact</h4>
-				<p>Randomised words which don't look even slightly believable.
-					If you are going to use a passage</p>
-				<ul>
-					<li><span> </span> <label>New Delhi</label></li>
-					<li><span> </span> <label>Info@yourwebsite.com</label></li>
-					<li><span> </span> <label>890-09880-45590</label></li>
-				</ul>
-			</div>
-			<div class="footer-grid footer-grid3">
-				<h4>Latest Tweets</h4>
-				<div class="recent-tweet">
-					<div class="recent-tweet-icon">
-						<span> </span>
-					</div>
-					<div class="recent-tweet-info">
-						<p>
-							Ds which don't look even slightly believable. If you are going to
-							use a passage <a href="#"> 1 Hour Ago</a>
-						</p>
-					</div>
-					<div class="clear"></div>
-				</div>
-				<div class="recent-tweet">
-					<div class="recent-tweet-icon">
-						<span> </span>
-					</div>
-					<div class="recent-tweet-info">
-						<p>
-							Ds which don't look even slightly believable. If you are going to
-							use a passage <a href="#"> 1 Hour Ago</a>
-						</p>
-					</div>
-					<div class="clear"></div>
-				</div>
-			</div>
-			<div class="footer-grid footer-grid4">
-				<h4>News Letter</h4>
-				<p>Randomised words which don't look even slightly believable.
-					If you are going to use a passage</p>
-				<form>
-					<input type="text" value="Email Address" onfocus="this.value = '';"
-						onblur="if (this.value == '') {this.value = 'Email Address';}">
-					<input type="submit" value="Go" />
-				</form>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</div>
-	<!---End-footer--->
-	<!---strat-copy-right---->
-	<div class="copy-right">
-		<div class="wrap">
-			<div class="copy-right-left">
-				<p>
-					&#169; All rights reserved. Template by <a
-						href="http://w3layouts.com/">w3layouts.com</a>
-				</p>
-			</div>
-			<div class="copy-right-right">
-				<ul>
-					<li><a class="twitter" href="#"><span> </span></a></li>
-					<li><a class="facebook" href="#"><span> </span></a></li>
-					<li><a class="linkedin" href="#"><span> </span></a></li>
-				</ul>
-			</div>
-			<div class="clear"></div>
-		</div>
-	</div>
-	</div>
-	<!---End-copy-right---->
-	<!---End-wrap---->
-
-
-	<!-- Modal -->
-	<div class="modal fade" id="mymodal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">Registration</h4>
-				</div>
-				<div class="modal-body">
-					<h3>
-						<a href="registrationclient.html">Client</a>
-					</h3>
-					</br>
-					<h3>
-						<a href="registrationsp.html">Service Provider</a>
-					</h3>
-
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
-        <script src="lib/js/angular.js"></script>
-        <script src="lib/js/angular-resource.js"></script>
-        <script src="lib/js/angular-route.js"></script>
-		<script type="text/javascript" src="lib/angular/webController.js"></script>
-		<script type="text/javascript"src="lib/angular/webServices.js" ></script>
-		<script src="lib/flow/ng-flow-standalone.js"></script>
-        <script src="utilities/pays.js"></script>
-        <script src="utilities/scale.fix.js"></script>
-        <script src="utilities/upload.js"></script>
-
-</html>
-
+    </div>

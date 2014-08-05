@@ -21,13 +21,6 @@ public class Client extends User implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	
-	
-	
-	
-
-
-
 
 	public Client(String firstName, String lastName, String adress, String tel,
 			byte[] profile, String email, String password, String pays,

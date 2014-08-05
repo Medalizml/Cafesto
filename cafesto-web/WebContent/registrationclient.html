@@ -1,11 +1,111 @@
+<div ng-controller="ClientControllers">
+    <h1>Registration Client</h1>
+    <form role="form" class="form-horizontal" name="clientForm"  ng-submit="create(clientForm)" novalidate="">
+        <div class="control-group" >
+                    <label class="control-label" for="Firstname">First name</label>
+                    <div class="controls">
+                        <input name="Firstname" class="form-group has-success" id="Firstname" type="text" value="Enter  First name" required="" ng-model="client.firstName"  >
+                            <span ng-show="clientForm.Firstname.$dirty">
+                             <span ng-show="clientForm.Firstname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                            </span>
+                    </div>
 
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+                </div>
 
-</body>
-</html>
+                <div class="control-group">
+                    <label class="control-label" for="Last name">Last name</label>
+                    <div class="controls">
+                        <input  name="Lastname" class="form-group has-success" id="Last name" type="text" value="Enter  last name" required="" ng-model="client.lastName">
+                     <span ng-show="clientForm.Lastname.$dirty">
+                             <span ng-show="clientForm.Lastname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                            </span>
+                    </div>
+                </div>
+
+
+        <div class="control-group">
+            <label class="control-label" for="Email">Email</label>
+            <div class="controls">
+                <input  name="email" class="form-group has-success" id="Email" type="email" value="Enter Email" required="" ng-model="client.email" ng-change="verifadmin(client.email)">
+
+                        <span ng-show="clientForm.email.$dirty">
+                            <span ng-show="clientForm.email.$error.required"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Email is Required</span>
+                            <span ng-show="clientForm.email.$error.email"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">This email is not correct</span>
+                            <span ng-show="clientForm.email.$error.exist"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">This email already exists</span>
+                         </span>
+            </div>
+        </div>
+        <div class="control-group">
+
+            <label for="Password" class="control-label">Password</label>
+            <div class="controls">
+                <input  name="password" type="password" class="form-control" id="Password" placeholder="Password" ng-model="client.password" ng-minlength="6" required="" equals="{{sp1.password2}}">
+                       <span ng-show="clientForm.password.$dirty">
+                                    <span ng-show="clientForm.password.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Required</span>
+                                    <span ng-show="clientForm.password.$error.minlength" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">At least 6 characters</span>
+                                </span>
+
+            </div>
+        </div>
+        <div class="control-group">
+            <label for="Passwordverif" class="control-label">Password verification</label>
+            <div class="controls">
+                <input  name="password2" type="password" class="form-control" id="Passwordverif" placeholder="Confirm password"   required="" equals="{{client.password}}" ng-model="sp1.password2">
+                    <span ng-show="clientForm.password2.$dirty">
+                        <span class="msg-error" ng-show="clientForm.password2.$error.equals" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">
+		                    Passwords don't match.
+	                        </span>
+
+                    </span>
+            </div>
+        </div>
+        <div ng-controller="paysCtrl">
+            <div class="control-group">
+                <label class="control-label" for="country">Country</label>
+
+
+                <div class="controls" >
+
+                    <select  ng-model="MyCountry" name="pays" class="form-control" id="country" required="" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)">
+                    </select>
+                                    <span ng-show="clientForm.pays.$dirty">
+                                    <span ng-show="clientForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+
+                                </span>
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label  class="control-label" for="Telephone" >Phone</label>
+                <div class="controls">
+                    <input ng-model="client.code" name="code"  id="code" class="form-control" type="text" disabled  />
+
+
+                    <input  name="telephone"class="form-group has-success" id="telephone" type="text" placeholder="Enter phone number " ng-model="client.tel" ng-pattern="/[0-9]{8}$/" required="">
+                                <span ng-show="clientForm.telephone.$dirty">
+                                    <span ng-show="clientForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Phone number is required</span>
+                                    <span ng-show="clientForm.telephone.$error.pattern" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">The  phone number must contains 8 numbers</span>
+                                </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="control-group">
+            <label class="control-label" for="exampleInputEmail1">Address</label>
+            <div class="controls">
+                <input class="form-group has-success" id="exampleInputEmail1" type="text" value="Enter Address" ng-model="client.adress">
+            </div>
+        </div>
+        <div class="control-group">
+
+
+
+            <ng-include src="'utilities/upload.html'"/>
+
+        </div>
+
+        <button type="submit" class="btn btn-default" ng-disabled="clientForm.$invalid" ng-click="">Submit</button>
+    </form>
+
+</div>

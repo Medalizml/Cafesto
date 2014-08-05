@@ -201,6 +201,10 @@ function paysCtrl($scope ,countries){
             $scope.sp.pays=country.name;
             $scope.sp.code=country.dial_code;
         }
+        if($scope.client!=null){
+            $scope.client.pays=country.name;
+            $scope.client.code=country.dial_code;
+        }
 
     };
 
