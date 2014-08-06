@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.telnet.esprit.cafesto.dao.GenericDao;
-import com.telnet.esprit.cafesto.dao.GenericDaoImpl;
 import com.telnet.esprit.cafesto.dao.UserDao;
+import com.telnet.esprit.cafesto.entity.ServiceProvider;
 import com.telnet.esprit.cafesto.entity.User;
 
 @Service
@@ -58,9 +58,10 @@ public class UserServiceImpl implements Iservice<User> {
 		// TODO Auto-generated method stub
 		return dao.findUserByMail(mail);
 	}
+
+	public List<ServiceProvider> findbyAdmin(int id) {
 	
-	
-	
-	
+		return dao.findbyAdministrator(id);
+	}
 
 }

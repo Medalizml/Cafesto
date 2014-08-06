@@ -109,6 +109,7 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST, headers = "Accept=application/json")
 	public @ResponseBody
 	User authentification(@RequestBody String email, @RequestBody String password) {
+		System.out.println(email);
 		return iservice.Authentication(email, password);
 	}
 	
@@ -118,6 +119,12 @@ public class UserController {
 		Map map = new HashMap();
 		map.put("resultat", iservice.findbyMail(email));
 		return map;
+	}
+	@RequestMapping(value = "/Administrator/serviceProvider/{id}", method = RequestMethod.GET, headers = "Accept=application/json")
+	public @ResponseBody
+	List<ServiceProvider> findAdminWithServiceProvider(@PathVariable int id) {
+		
+		return iservice.findbyAdmin(id);
 	}
 	
 	

@@ -21,23 +21,17 @@ var appupload = angular.module('uploadapp', ['flow'])
        // flowFactoryProvider.factory = fustyFlowFactory;
     }]);
 appupload.controller('uploadimage',['$scope',function($scope){
-    console.log($scope.admin);
-    console.log($scope.admin.profile)
-   // $scope.$on('flow::fileAdded', function (event, $flow, flowFile) {
-       // if($scope.admin.profile.length=!0){
-            //console.log($flow.file)
 
-
-        //}
-   // });
-    console.log($scope.admin.profile)
+    console.log($scope.admin)
     console.log(adminprofile)
-    if($scope.admin.profile.length!=0) {
+    console.log($scope.admin.profile)
+    console.log($scope.admin.lastName)
+    if($scope.admin.profile!=null) {
         userprofile.src = "data:image/gif;base64," + $scope.admin.profile;
         adminprofile.src="data:image/gif;base64,"+$scope.admin.profile;
+    }else{
+        userprofile.src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
     }
-
-
 
 
 }])

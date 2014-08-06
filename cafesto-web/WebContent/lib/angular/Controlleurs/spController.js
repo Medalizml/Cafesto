@@ -1,8 +1,13 @@
-var app = angular.module('spApp', ['app.spservices','paysapp','uploadapp'])
+var appweb = angular.module('appWeb',['ngRoute','appWeb.spservices','appWeb.clientservices','paysapp','uploadapp'])
 
+appweb.config(function($routeProvider){
 
+    $routeProvider.when('/', {templateUrl: 'accueil.html', controller: ''});
+    $routeProvider.when('/registre/ServiceProvider', {templateUrl: 'registrationsp.html', controller: 'ServiceProviderControllers'});
+    $routeProvider.when('/registre/client', {templateUrl: 'registrationclient.html', controller: 'ClientControllers'});
+});
 
-app.controller('ServiceProviderControllers',['$scope','serviceProvider','$location', function($scope,serviceProvider,$location) {
+appweb.controller('ServiceProviderControllers',['$scope','serviceProvider','$location', function($scope,serviceProvider,$location) {
 
     $scope.verifadmin=function(mail){
 
@@ -42,7 +47,7 @@ app.controller('ServiceProviderControllers',['$scope','serviceProvider','$locati
 
 
 
-app.directive("equals",function(){
+appweb.directive("equals",function(){
     return {
         restrict: 'A', // only activate on element attribute
         require: '?ngModel', // get a hold of NgModelController
