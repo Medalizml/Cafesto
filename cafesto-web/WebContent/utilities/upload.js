@@ -21,4 +21,17 @@ var appupload = angular.module('uploadapp', ['flow'])
        // flowFactoryProvider.factory = fustyFlowFactory;
     }]);
 
+appupload.controller('uploadCtr','$scope',function($scope){
 
+    $scope.isDataAvailable=function(){
+        if($scope.admin.profile!=null){
+            userprofile.src="data:image/png;base64,"+$scope.admin.profile;
+            adminprofile.src="data:image/png;base64,"+$scope.admin.profile;
+            return true
+        }
+        else{
+            userprofile.src="http://senate.tufts.edu/no-profile-img.jpg";
+            return false
+        }
+    }
+})
