@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class ServiceProvider extends User implements Serializable {
 
@@ -34,7 +36,7 @@ public class ServiceProvider extends User implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.MERGE)
 	public Administrator getAdmin() {
 		return admin;
 	}
@@ -44,6 +46,7 @@ public class ServiceProvider extends User implements Serializable {
 	}
 
 	@OneToMany(mappedBy = "seProvider")
+	@JsonIgnore
 	public List<Establishment> getEstablishments() {
 		return establishments;
 	}

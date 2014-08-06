@@ -20,18 +20,25 @@ var appupload = angular.module('uploadapp', ['flow'])
         // Can be used with different implementations of Flow.js
        // flowFactoryProvider.factory = fustyFlowFactory;
     }]);
+appupload.controller('uploadimage',['$scope',function($scope){
+
+    console.log($scope.admin)
+    console.log(adminprofile)
+    console.log($scope.admin.profile)
+    console.log($scope.admin.lastName)
+    
+
+
+}])
 
 appupload.controller('uploadCtr','$scope',function($scope){
 
     $scope.isDataAvailable=function(){
-        if($scope.admin.profile!=null){
-            userprofile.src="data:image/png;base64,"+$scope.admin.profile;
-            adminprofile.src="data:image/png;base64,"+$scope.admin.profile;
-            return true
-        }
-        else{
-            userprofile.src="http://senate.tufts.edu/no-profile-img.jpg";
-            return false
+    	if($scope.admin.profile!=null) {
+            userprofile.src = "data:image/gif;base64," + $scope.admin.profile;
+            adminprofile.src="data:image/gif;base64,"+$scope.admin.profile;
+        }else{
+            userprofile.src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
         }
     }
 })

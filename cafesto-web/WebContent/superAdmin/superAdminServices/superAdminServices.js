@@ -15,5 +15,7 @@ services.factory('admins', ['$resource', function($resource) {
         'findbymail': {method:'POST'},
         'update': {method:'PUT',params: {id: '@id'}},
         'delete': { method: 'DELETE', params: {id: '@id'} }
+
+
     });
 }]);

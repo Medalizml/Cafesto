@@ -1,3 +1,4 @@
+
 /**
  * Created by AMINOVISH.B on 11/07/2014.
  */
@@ -8,7 +9,7 @@ app.config(function($routeProvider){
     $routeProvider.when('/', {templateUrl: '../superAdmin/superadminViews/dashbord.html', controller: 'adminControllers'});
     $routeProvider.when('/test', {templateUrl: '../superAdmin/superadminViews/test.html', controller: 'adminControllers'});
     $routeProvider.when('/new', {templateUrl: '../superAdmin/superadminViews/admin/new.html', controller: 'adminControllers'});
-    $routeProvider.when('/update/:id', {templateUrl: '../superAdmin/superadminViews/admin/update.html', controller: 'adminControllers'});
+    $routeProvider.when('/update/:id', {templateUrl: '../superAdmin/superadminViews/admin/update.html', controller: 'adminControllersupdate'});
 
 });
 
@@ -62,6 +63,7 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
 
         }}
             $scope.editAdmin = function () { // callback for ng-click 'updateUser':
+
                 if($scope.adminForm.$valid) {
                     var file = document.getElementById("adminprofile").getAttribute('src')
                     var n= file.search(",");
@@ -84,7 +86,14 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
         $scope.editUser = function (userId) {
 
                 $location.path('/update/' + userId);
+            if($scope.admin.profile.length!=0) {
+                userprofile.src = "data:image/gif;base64," + $scope.admin.profile;
+                adminprofile.src="data:image/gif;base64,"+$scope.admin.profile;
+            }else{
+                userprofile.src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
+            }
             };
+
         $scope.activateUser=function(admin){
 
             console.log(admin)
@@ -103,6 +112,16 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
 
             admins.update($scope.activeadmin);
         }
+
+            $scope.numbers = [
+                {ID: '10'},
+                {ID: '25'},
+                {ID: '50'},
+                {ID: '100'}
+            ];
+
+
+
 
         }]
     );

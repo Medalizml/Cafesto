@@ -9,6 +9,7 @@ import java.util.logging.Logger;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
+import com.telnet.esprit.cafesto.entity.ServiceProvider;
 import com.telnet.esprit.cafesto.entity.User;
 
 
@@ -48,6 +49,15 @@ public class UserDao extends GenericDaoImpl<User> implements GenericDao<User> {
 			resultat=true;
 		}
 		return resultat;
+		
+	}
+	public List<ServiceProvider> findbyAdministrator(int id){
+		List<ServiceProvider> found = null;
+		String jpql="from ServiceProvider s where s.admin.id=:x";
+		Query query =(Query) getCurrentSession().createQuery(jpql);
+		query.setParameter("x", id);
+		found=(List<ServiceProvider>)query.list();
+		return found;
 		
 	}
 

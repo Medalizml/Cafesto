@@ -21,7 +21,7 @@
             </div>
 
 
-            <div id="example2_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="span6"><div id="example2_length" class="dataTables_length"><label><select size="1" name="example2_length" aria-controls="example2" ng-model="x"><option value="{{x=10}}" selected="selected" >10</option><option value="{{x=25}}">25</option><option value="{{x=50}}">50</option><option value="{{x=100}}">100</option></select> records per page</label></div></div><div class="span6"><div class="dataTables_filter" id="example2_filter"><label>Search: <input type="text" aria-controls="example2" ng-model="adminfirstname.firstName"></label></div></div></div><table cellpadding="0" cellspacing="0" border="0" class="table table-hover table-bordered dataTable" id="example2" aria-describedby="example2_info">
+            <div id="example2_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="span6"><div id="example2_length" class="dataTables_length"><label><select size="1" name="example2_length" aria-controls="example2" ng-model="x"  ng-options="x.ID for x in numbers" ng-init="x=numbers[0]"></select> records per page</label></div></div><div class="span6"><div class="dataTables_filter" id="example2_filter"><label>Search: <input type="text" aria-controls="example2" ng-model="adminfirstname.firstName"></label></div></div></div><table cellpadding="0" cellspacing="0" border="0" class="table table-hover table-bordered dataTable" id="example2" aria-describedby="example2_info">
                 <thead>
                 <tr role="row"><th class="sorting_asc" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending" style="width: 120px;">First Name</th>
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 120px;">Last Name</th>
@@ -31,19 +31,19 @@
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 50px;">Status</th></tr>
                 </thead>
 
-                <tbody role="alert" aria-live="polite" aria-relevant="all"  ng-repeat="admin in alladmins | filter:adminfirstname |limitTo:x"><tr class="gradeA odd" ng-click="listaffiche=!listaffiche">
+                <tbody role="alert" aria-live="polite" aria-relevant="all"  ng-repeat="admin in alladmins | filter:adminfirstname |limitTo:x.ID"><tr class="gradeA odd" ng-mouseover="listaffiche=true" ng-mouseleave="listaffiche=false">
                     <td class=" sorting_1">{{admin.firstName}}</td>
-                    <td class=" ">{{admin.lastName}}</td>
+                    <td class=" ">{{admin.lastName|uppercase}}</td>
                     <td class=" ">{{admin.email}}</td>
                     <td class="center ">{{admin.tel}}</td>
                     <td class="center ">{{admin.adress}}</td>
                     <td class="center ">{{admin.status}}</td>
 
                 </tr>
-                <tr>
+                <tr  ng-mouseover="listaffiche=true" ng-mouseleave="listaffiche=false">
                     <td colspan="6"  align=center >
-                        <button class="btn btn-info"  ng-show="listaffiche" style="width: 200px" >view Administrator profile</button>
-                        <button class="btn btn-primary"  ng-show="listaffiche" style="width: 160px"  ng-click="editUser(admin.id)">edit user</button>
+                        <button class="btn btn-primary"  ng-show="listaffiche" style="width: 200px" >view Administrator profile</button>
+                        <button class="btn btn-info"  ng-show="listaffiche" style="width: 160px"  ng-click="editUser(admin.id)">edit user</button>
 
                         <button class="btn btn-success" ng-show="listaffiche"style="width: 180px" ng-click="activateUser(admin)" >activate user </button>
                     <button class="btn btn-warning" ng-show="listaffiche"style="width: 180px" ng-click="InactivateUser(admin)">Inactivate user </button>

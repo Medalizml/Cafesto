@@ -30,11 +30,6 @@ public class SuperAdministrator extends User implements Serializable {
 
 
 
-
-
-
-
-
 	@OneToMany(mappedBy="superAdmin")
 	@JsonIgnore  
 	public List<Administrator> getAdministrators() {
