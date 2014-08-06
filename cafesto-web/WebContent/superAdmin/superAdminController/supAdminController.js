@@ -2,20 +2,11 @@
 /**
  * Created by AMINOVISH.B on 11/07/2014.
  */
-var app = angular.module('urls', ['ngRoute','app.services','paysapp','uploadapp'])
 
 
-app.config(function($routeProvider){
-    $routeProvider.when('/', {templateUrl: '../superAdmin/superadminViews/dashbord.html', controller: 'adminControllers'});
-    $routeProvider.when('/test', {templateUrl: '../superAdmin/superadminViews/test.html', controller: 'adminControllers'});
-    $routeProvider.when('/new', {templateUrl: '../superAdmin/superadminViews/admin/new.html', controller: 'adminControllers'});
-    $routeProvider.when('/update/:id', {templateUrl: '../superAdmin/superadminViews/admin/update.html', controller: 'adminControllersupdate'});
-
-});
-
-
-app.controller('adminControllers',['$scope','$routeParams','admins','$location', function($scope,$routeParams,admins,$location) {
+appSuperadmin.controller('SuperadminControllers',['$scope','$routeParams','admins','$location', function($scope,$routeParams,admins,$location) {
         $scope.alladmins=admins.query();
+        $scope.admin={};
             if($routeParams.id!=null){
                 $scope.admin = admins.get({id: $routeParams.id})
 
@@ -66,6 +57,7 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
 
                 if($scope.adminForm.$valid) {
                     var file = document.getElementById("adminprofile").getAttribute('src')
+
                     var n= file.search(",");
 
                     $scope.admin.profile = file.substring(n+1,file.length);
@@ -86,12 +78,7 @@ app.controller('adminControllers',['$scope','$routeParams','admins','$location',
         $scope.editUser = function (userId) {
 
                 $location.path('/update/' + userId);
-            if($scope.admin.profile.length!=0) {
-                userprofile.src = "data:image/gif;base64," + $scope.admin.profile;
-                adminprofile.src="data:image/gif;base64,"+$scope.admin.profile;
-            }else{
-                userprofile.src="http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image";
-            }
+            
             };
 
         $scope.activateUser=function(admin){

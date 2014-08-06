@@ -9,6 +9,7 @@ appweb.config(function($routeProvider){
 
 appweb.controller('ServiceProviderControllers',['$scope','serviceProvider','$location', function($scope,serviceProvider,$location) {
 
+    $scope.sp={};
     $scope.verifadmin=function(mail){
 
         serviceProvider.findbymail({id:'findbymail'},mail,function (Response) {

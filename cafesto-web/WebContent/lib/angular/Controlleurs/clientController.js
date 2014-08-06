@@ -3,7 +3,7 @@
  */
 
 appweb.controller('ClientControllers',['$scope','clientService','$location', function($scope,clientService,$location) {
-
+    $scope.client={}
     $scope.verifadmin=function(mail){
 
         clientService.findbymail({id:'findbymail'},mail,function (Response) {
