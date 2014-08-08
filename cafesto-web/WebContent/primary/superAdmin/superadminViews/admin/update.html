@@ -1,0 +1,101 @@
+<div class="block" xmlns="http://www.w3.org/1999/html">
+    <div class="navbar navbar-inner block-header">
+        <div class="muted pull-left">Form Validation</div>
+    </div>
+    <div class="block-content collapse in">
+        <div class="span12">
+            <!-- BEGIN FORM-->
+            <div ng-controller="SuperAdminControllerCRUD">
+                <form role="form" class="form-horizontal" name="adminForm"  ng-submit="editAdmin()"novalidate="">
+                    <div class="control-group" >
+                        <label class="control-label" for="Firstname">First name</label>
+                        <div class="controls">
+                            <input name="Firstname" class="form-group has-success" id="Firstname" type="text" value="Enter  First name" required="" ng-model="admin.firstName"  >
+                            <span ng-show="adminForm.Firstname.$dirty">
+                             <span ng-show="adminForm.Firstname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="Last name">Last name</label>
+                        <div class="controls">
+                            <input  name="Lastname" class="form-group has-success" id="Last name" type="text" value="Enter  last name" required="" ng-model="admin.lastName">
+                     <span ng-show="adminForm.Lastname.$dirty">
+                             <span ng-show="adminForm.Lastname.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="Email">Email</label>
+                        <div class="controls">
+                            <input  name="email" class="form-group has-success" id="Email" type="email" value="Enter Email" required="" ng-model="admin.email" ng-change="verifadmin(admin.email)">
+
+                        <span ng-show="adminForm.email.$dirty">
+                            <span ng-show="adminForm.email.$error.required"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                            <span ng-show="adminForm.email.$error.email"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">L'email n'est pas correct</span>
+                            <span ng-show="adminForm.email.$error.exist"  style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">this user exists</span>
+                         </span>
+                        </div>
+                    </div>
+
+                    <div ng-controller="paysCtrl">
+                        <div class="control-group">
+                            <label class="control-label" for="country">Country</label>
+
+
+                            <div class="controls" >
+
+                                <select ng-if="admin.pays==null" ng-model="MyCountry" name="pays" class="form-control" id="country" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)" >
+                                </select>
+                                <select ng-if="admin.pays!=null" ng-model="MyCountry" ng-init="init()" name="pays" class="form-control" id="country" placeholder="Enter your country"  ng-options="country.name for country in pays.cast"  ng-change="selectAction(MyCountry)" >
+                                </select>
+                                    <span ng-show="adminForm.pays.$dirty">
+                                    <span ng-show="adminForm.pays.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+
+                                </span>
+
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label  class="control-label" for="Telephone" >Telephone</label>
+                            <div class="controls">
+                                <input ng-model="admin.code" name="code"  id="code" class="form-control" type="text" disabled  />
+
+
+                                <input  name="telephone"class="form-group has-success" id="telephone" type="text" placeholder="Enter phone number " ng-model="admin.tel" ng-pattern="/[0-9]{8}$/" required="">
+                                <span ng-show="adminForm.telephone.$dirty">
+                                    <span ng-show="adminForm.telephone.$error.required" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">Champs obligatoire</span>
+                                    <span ng-show="adminForm.telephone.$error.pattern" style="color: #ff0000;font-family: Lucida Grande, Tahoma, sans-serif">The  phone number must contains 8 numbers</span>
+                                </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="exampleInputEmail1">Address</label>
+                        <div class="controls">
+                            <input class="form-group has-success" id="exampleInputEmail1" type="text" value="Enter Address" ng-model="admin.adress">
+                        </div>
+                    </div>
+                    <div class="control-group">
+
+
+
+                        <ng-include src="'superadminViews/admin/upload.html'"/>
+
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" ng-model="admin.status"> Activate administrator
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-default" ng-disabled="adminForm.$invalid" ng-click="">Submit</button>
+                </form>
+            </div>
+            <!-- END FORM-->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div flow-init="{singleFile:true}"     flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]" class="ng-scope">
+    <h3>
+        <a name="image-example" class="anchor" href="#image-example"><span class="octicon octicon-link"></span></a>Photo Profile</h3>
+    <div class="thumbnail ng-hide" ng-show="!$flow.files.length">
+        <img id="userprofile" style="width: 200px;hight:150px" ng-src="{{(admin.profile) ? 'data:image/gif;base64,'+admin.profile : 'http://www.placehold.it/200x150/EFEFEF/AAAAAA&amp;text=no+image'}}">
+    </div>
+    <div class="thumbnail" ng-show="$flow.files.length" >
+        <img style="max-width: 200px;max-height: 150px;" flow-img="$flow.files[0]" ng-model="admin.profile" id="adminprofile" src="" ng-src="{{(admin.profile) ? 'data:image/gif;base64,'+admin.profile : ''}}">
+    </div>
+    <div >
+       <span class="btn btn-primary" ng-show="!$flow.files.length" flow-btn="">Select image<input type="file" style="visibility: hidden; position: absolute;"></span>
+        <span class="btn btn-info" ng-show="$flow.files.length" flow-btn="">Change<input type="file" style="visibility: hidden; position: absolute;"></span>
+  <span class="btn btn-danger" ng-show="$flow.files.length" ng-click="$flow.cancel()">
+    Remove
+  </span>
+    </div>
+    <p>
+        Only PNG,GIF,JPG,JEPG files allowed.
+    </p>
+</div>

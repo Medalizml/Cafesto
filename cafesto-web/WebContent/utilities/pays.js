@@ -207,6 +207,20 @@ function paysCtrl($scope ,countries){
         }
 
     };
+    $scope.init=function(){
+
+        console.log('test1',$scope.admin.pays);
+        console.log(countries);
+        for(var i=0;i<countries.cast.length;i++){
+            console.log(countries.cast[i].name)
+            if($scope.admin.pays==countries.cast[i].name){
+                console.log("d5al");
+                $scope.MyCountry=countries.cast[i];
+
+            }
+        }
+
+    }
 
 
 }
