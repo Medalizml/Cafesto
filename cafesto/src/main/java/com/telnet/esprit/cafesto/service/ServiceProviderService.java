@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.telnet.esprit.cafesto.dao.ServiceProviderDao;
+import com.telnet.esprit.cafesto.entity.Establishment;
 import com.telnet.esprit.cafesto.entity.EvalutionEstablishment;
-
-@Service
 @Transactional
+@Service
 public class ServiceProviderService implements IserviceServiceProvider {
 
 	@Autowired
@@ -38,6 +38,10 @@ public class ServiceProviderService implements IserviceServiceProvider {
 			}
 		}
 		return (moy/nb);
+	}
+	public List<Establishment> establisementServiceProvide(int idSp) {
+		// TODO Auto-generated method stub
+		return dao.establisementServiceProvide(idSp);
 	}
 
 }
