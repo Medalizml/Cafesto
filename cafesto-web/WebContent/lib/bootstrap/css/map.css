@@ -1,0 +1,42 @@
+.map {
+    height: 400px;
+    width: 600px;
+    margin: auto;
+
+}
+.map-canvas {
+    height: 400px;
+    margin-bottom: 3%;
+    border-width: 5px;
+    border-color: #ffffff;
+    border-style: solid;
+}
+
+
+.newfont{
+    font-family: 'myFirstFont';
+    color: darkred;
+    text-align: center;
+
+
+}
+
+@font-face {
+    font-family: 'myFirstFont';
+    src:url('../fonts/EpiqueTypeface.ttf') format('TrueType')
+}
+@font-face {
+    font-family: 'Hallosans';
+    src: url(../fonts/Hallo%20sans%20light.otf)format('OpenType');
+}
+.bshadowoutred{
+    -webkit-box-shadow: 2px -1px 101px -1px rgba(199,18,69,1);
+    -moz-box-shadow: 2px -1px 101px -1px rgba(199,18,69,1);
+    box-shadow: 2px -1px 101px -1px rgba(199,18,69,1);
+
+}
+.bshadowinred{
+    -webkit-box-shadow: inset -9px 10px 53px -15px rgba(150,115,150,1);
+    -moz-box-shadow: inset -9px 10px 53px -15px rgba(150,115,150,1);
+    box-shadow: inset -9px 10px 53px -15px rgba(150,115,150,1);
+}

@@ -7,7 +7,7 @@
 /* Controllers */
 
 
-angular.module('SuperAdmin.ctrl',['paysapp','uploadapp'])
+angular.module('SuperAdmin.ctrl',['paysapp','uploadapp','ui.bootstrap'])
 .controller('SuperAdminControllerCRUD',['$scope','$routeParams','admins','$location', function($scope,$routeParams,admins,$location) {
         $scope.alladmins=admins.query();
         $scope.admin={};
