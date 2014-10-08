@@ -7,4 +7,11 @@ var appServicesProviders = angular.module('ServicesProviders', ['ngRoute','SP.se
 appServicesProviders.config(function($routeProvider){
 
 
+    $routeProvider.when('/',{templateUrl:'servicesProvidersViews/Dashbord.html',controller:'ServiceProviderControllers'})
+    $routeProvider.when('/business',{templateUrl:'servicesProvidersViews/Business/list.html',controller:'ServiceProviderControllers'})
+    $routeProvider.when('/services',{templateUrl:'servicesProvidersViews/Business/services.html',controller:'ServiceProviderControllers'})
+    $routeProvider.when('/profile',{templateUrl:'servicesProvidersViews/Business/Profile.html',controller:'ServiceProviderControllers'})
+    $routeProvider.when('/business/dishes',{templateUrl:'servicesProvidersViews/Business/Dishes/dishesList.html',controller:'ServiceProviderControllers'})
+    $routeProvider.when('/business/services',{templateUrl:'servicesProvidersViews/Business/services/listservices.html',controller:'ServiceProviderControllers'})
+
 });

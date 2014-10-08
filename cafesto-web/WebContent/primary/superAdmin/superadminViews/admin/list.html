@@ -31,7 +31,7 @@
                     <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 50px;">Status</th></tr>
                 </thead>
 
-                <tbody role="alert" aria-live="polite" aria-relevant="all"  ng-repeat="admin in alladmins | filter:adminfirstname |limitTo:x.ID"><tr class="gradeA odd" ng-mouseover="listaffiche=true" ng-mouseleave="listaffiche=false">
+                <tbody role="alert" aria-live="polite" aria-relevant="all"  ng-repeat="admin in alladmins | filter:adminfirstname |limitTo:x.ID"><tr class="gradeA odd " ng-mouseover="listaffiche=true" ng-mouseleave="listaffiche=false">
                     <td class=" sorting_1">{{admin.firstName}}</td>
                     <td class=" ">{{admin.lastName|uppercase}}</td>
                     <td class=" ">{{admin.email}}</td>
@@ -40,7 +40,7 @@
                     <td class="center ">{{admin.status}}</td>
 
                 </tr>
-                <tr  ng-mouseover="listaffiche=true" ng-mouseleave="listaffiche=false">
+                <tr  ng-mouseover="listaffiche=true" ng-mouseleave="listaffiche=false" >
                     <td colspan="6"  align=center >
                         <button class="btn btn-primary"  ng-show="listaffiche" style="width: 200px" >view Administrator profile</button>
                         <button class="btn btn-info"  ng-show="listaffiche" style="width: 160px"  ng-click="editUser(admin.id)">edit user</button>

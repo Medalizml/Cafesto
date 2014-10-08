@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default" role="navigation" >
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand">Business</a></div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right btn-default" style="background-color: #000000;-webkit-box-shadow: inset -1px -2px 110px 8px rgba(175,18,227,0.71);
+-moz-box-shadow: inset -1px -2px 110px 8px rgba(175,18,227,0.71);
+box-shadow: inset -1px -2px 110px 8px rgba(175,18,227,0.71);">
+                <li ><a href="#" style="color: #ffffff">Add new establishment <i class="glyphicon glyphicon-plus"></i></a></li>
+            </ul>
+
+            <ul class="nav navbar-nav ">
+
+                <li ng-class="{ active: isActive('/business') }" ><a href="#/business">List of establishment</a></li>
+                <li ng-class="{ active: isActive('/business/dishes') }"><a href="#/business/dishes" >Dishes</a></li>
+                <li ng-class="{ active: isActive('/business/services') }"><a href="#/business/services">Services</a></li>
+
+
+
+            </ul>
+        </div>
+    </div>
+</nav>

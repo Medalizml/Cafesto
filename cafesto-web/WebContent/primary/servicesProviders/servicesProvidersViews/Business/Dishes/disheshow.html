@@ -1,0 +1,23 @@
+<script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header bshadowinred">
+        <h1 class="modal-title newfont" >DISH NAME </h1>
+    </div>
+    <div class="modal-body ">
+        <div style="text-align: center;" class="row "><img  style="border-style: solid;border-color:#dcdcdc;border-width: 3px" src="http://placehold.it/600x300" ></div>
+        <hr/>
+
+        <div class="pull-right"><rating  ng-model="rate" max="max" readonly="isReadonly"></rating></div>
+
+    </div>
+        <div class="form-inline form-group row-fluid h3"><span class="h3" style="font-family:Hallosans">Price: 24.58$  </span>
+            <span><input type="text" ng-show="isCollapsed" class="form-control"/></span>
+            <span><button class="btn btn-warning" ng-click="isCollapsed = !isCollapsed">edit price</button></span>
+            <span><button class="btn btn-danger" ng-show="isCollapsed" ng-click="isCollapsed = !isCollapsed">cancel</button></span>
+
+        </div>
+
+    <div class="modal-footer">
+        <button class="btn btn-danger" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</script>
