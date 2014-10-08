@@ -18,13 +18,16 @@ public class EvalutionEstablishment implements Serializable {
 
 	private int note;
 	private String comment;
+	private int foodquality;
+	private int deliveryService;
+	private int homeService;
 
 	public EvalutionEstablishment() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public EvalutionEstablishment(Client client, Establishment establishment,
-			int note, String comment) {
+			int note, String comment,int foodquality,int deliveryService,int homeService) {
 		this.getPk().setIdClient(client.getId());
 		this.getPk().setIdEstablishment(establishment.getId());
 		this.getPk().setDate(new Date());
@@ -32,6 +35,9 @@ public class EvalutionEstablishment implements Serializable {
 		this.establishment = establishment;
 		this.note = note;
 		this.comment = comment;
+		this.foodquality=foodquality;
+		this.deliveryService=deliveryService;
+		this.homeService=homeService;
 	}
 
 	@EmbeddedId
@@ -82,6 +88,30 @@ public class EvalutionEstablishment implements Serializable {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+	@Column(nullable=true)
+	public int getFoodquality() {
+		return foodquality;
+	}
+
+	public void setFoodquality(int foodquality) {
+		this.foodquality = foodquality;
+	}
+	@Column(nullable=true)
+	public int getDeliveryService() {
+		return deliveryService;
+	}
+	
+	public void setDeliveryService(int deliveryService) {
+		this.deliveryService = deliveryService;
+	}
+	@Column(nullable=true)
+	public int getHomeService() {
+		return homeService;
+	}
+
+	public void setHomeService(int homeService) {
+		this.homeService = homeService;
 	}
 
 }

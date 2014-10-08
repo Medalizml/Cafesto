@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Client extends User implements Serializable {
 	
@@ -39,6 +41,7 @@ public class Client extends User implements Serializable {
 
 
 	@OneToMany(mappedBy="client")
+	@JsonIgnore 
 	public List<EvalutionEstablishment> getClientEvalutions() {
 		return clientEvalutions;
 	}
@@ -49,6 +52,7 @@ public class Client extends User implements Serializable {
 
 	
 	@OneToMany(mappedBy="evclient")
+	@JsonIgnore 
 	public List<EvalutionProduct> getEvalutionProductsClients() {
 		return evalutionProductsClients;
 	}
@@ -58,6 +62,7 @@ public class Client extends User implements Serializable {
 	}
 
 	@OneToMany(mappedBy="commandeClient")
+	@JsonIgnore 
 	public List<Commande> getCommandeClients() {
 		return commandeClients;
 	}
