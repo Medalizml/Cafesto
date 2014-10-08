@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.telnet.esprit.cafesto.entity.ServiceProvider;
 import com.telnet.esprit.cafesto.entity.User;

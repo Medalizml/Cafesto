@@ -3,6 +3,9 @@ package com.telnet.esprit.cafesto.dao;
 import java.io.Serializable;
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
+
 public interface GenericDao<T extends Serializable> {
 	void create(T t);
 

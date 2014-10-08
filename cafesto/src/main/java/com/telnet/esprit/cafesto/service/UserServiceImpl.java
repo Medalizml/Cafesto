@@ -60,7 +60,7 @@ public class UserServiceImpl implements Iservice<User> {
 	}
 
 	public List<ServiceProvider> findbyAdmin(int id) {
-	
+
 		return dao.findbyAdministrator(id);
 	}
 
