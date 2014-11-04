@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Establishment implements Serializable {
 	
@@ -84,6 +86,7 @@ public class Establishment implements Serializable {
 	}
 
 	@ManyToOne(cascade = CascadeType.ALL)
+	@JsonIgnore 
 	public ServiceProvider getSeProvider() {
 		return seProvider;
 	}
@@ -93,6 +96,7 @@ public class Establishment implements Serializable {
 	}
 	
 	@OneToMany(mappedBy="establishment")
+	@JsonIgnore
 	public List<Product> getProducts() {
 		return products;
 	}
@@ -102,6 +106,7 @@ public class Establishment implements Serializable {
 	}
 
 	@OneToMany(mappedBy="establishmentpic")
+	@JsonIgnore 
 	public List<EstablishmentPicture> getEstablishmentPictures() {
 		return establishmentPictures;
 	}
@@ -130,6 +135,7 @@ public class Establishment implements Serializable {
 
 
 	@OneToMany(mappedBy="establishment")
+	@JsonIgnore 
 	public List<EvalutionEstablishment> getEstablishmentEvalution() {
 		return establishmentEvalution;
 	}
@@ -141,6 +147,7 @@ public class Establishment implements Serializable {
 
 
 	@OneToMany(mappedBy="establishment")
+	@JsonIgnore 
 	public List<Table> getTables() {
 		return tables;
 	}

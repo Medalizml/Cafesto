@@ -14,6 +14,8 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Cascade;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Product implements Serializable{
 	private int id ;
@@ -90,6 +92,7 @@ public class Product implements Serializable{
 	}
 
 	@OneToMany(mappedBy="product")
+	@JsonIgnore
 	public List<EvalutionProduct> getEvalutionProducts() {
 		return evalutionProducts;
 	}
@@ -99,6 +102,7 @@ public class Product implements Serializable{
 	}
 
 	@OneToMany(mappedBy="product")
+	@JsonIgnore
 	public List<Commande> getCommandes() {
 		return commandes;
 	}
