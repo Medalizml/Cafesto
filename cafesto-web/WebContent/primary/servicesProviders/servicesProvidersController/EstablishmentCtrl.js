@@ -3,7 +3,7 @@
  */
 var establishmentCtrl =angular.module('establishmentSP.ctrl',['ui.map','ui.bootstrap'])
 
-establishmentCtrl.controller('establishmentCtrl',['$scope',function($scope){
+establishmentCtrl.controller('establishmentCtrl',['$scope','Establishment','$routeParams',function($scope,Establishment,$routeParams){
 
     $scope.myMarkers = [];
 
@@ -28,6 +28,10 @@ establishmentCtrl.controller('establishmentCtrl',['$scope',function($scope){
         console.log("test")
         marker.setPosition(new google.maps.LatLng(lat, lng));
     };
+    
+    $scope.establishment=Establishment.getByid({id: '48'});
+    console.log("dddd"+$scope.establishment);
+
 }]);
 
 

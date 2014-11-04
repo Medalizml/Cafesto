@@ -1,4 +1,4 @@
-angular.module('SP.ctrl',['paysapp','uploadapp','doc.ui-map','ui.bootstrap'])
+angular.module('SP.ctrl',['paysapp','uploadapp','doc.ui-map','ui.bootstrap','establishmentSP.ctrl'])
 
 
 

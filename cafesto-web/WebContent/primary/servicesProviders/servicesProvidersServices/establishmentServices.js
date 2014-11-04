@@ -4,5 +4,8 @@
 angular.module('EstablishmentSp.services', ['ngResource'])
 
     .factory('Establishment', ['$resource', function($resource) {
+        return $resource('../../../cafesto/service/SP/:id',{},{
+            'getByid':{method:'GET',params: {id: '@id'}}
+        });
 
     }]);

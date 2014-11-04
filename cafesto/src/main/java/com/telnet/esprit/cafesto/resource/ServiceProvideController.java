@@ -17,28 +17,31 @@ import com.telnet.esprit.cafesto.service.IserviceServiceProvider;
 @Controller
 @RequestMapping("/service/SP")
 public class ServiceProvideController {
-	
+
 	@Autowired
 	IserviceServiceProvider iServiceProvider;
-	
+
 	@RequestMapping(method = RequestMethod.GET, value = "/{id}", headers = "Accept=application/json")
 	public @ResponseBody
 	List<Establishment> getByid(@PathVariable int id) {
 
 		return iServiceProvider.establisementServiceProvide(id);
 	}
+
 	@RequestMapping(method = RequestMethod.GET, value = "{idsp}/establishment/{idetbal}", headers = "Accept=application/json")
 	public @ResponseBody
-	Establishment getEtablishmentByid(@PathVariable("idsp") int idsp,@PathVariable("idetbal") int idetabl) {
+	Establishment getEtablishmentByid(@PathVariable("idsp") int idsp,
+			@PathVariable("idetbal") int idetabl) {
 
 		return iServiceProvider.getEstablishmentByServerProvider(idsp, idetabl);
 	}
+
 	@RequestMapping(method = RequestMethod.GET, value = "{idsp}/establishment/{idetbal}/product", headers = "Accept=application/json")
 	public @ResponseBody
-	List<Product> getProductByEtablisement(@PathVariable("idsp") int idsp,@PathVariable("idetbal") int idetabl) {
+	List<Product> getProductByEtablisement(@PathVariable("idsp") int idsp,
+			@PathVariable("idetbal") int idetabl) {
 
 		return iServiceProvider.getProduct(idsp, idetabl);
 	}
-	
-	
+
 }
