@@ -71,7 +71,7 @@ angular.module('SP.ctrl',['paysapp','uploadapp','doc.ui-map','ui.bootstrap'])
 
         }
 
-
+       //--------------------------------mapCtrl-------------------------------
 
     }]);
 

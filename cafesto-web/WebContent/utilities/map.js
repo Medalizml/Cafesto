@@ -16,12 +16,7 @@ angular.module('doc.ui-map', ['ui.map' ])
             zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
-        $scope.addMarker = function($event, $params) {
-            $scope.myMarkers.push(new google.maps.Marker({
-                map: $scope.myMap,
-                position: $params[0].latLng
-            }));
-        };
+
         $scope.setZoomMessage = function(zoom) {
             $scope.zoomMessage = 'You just zoomed to '+zoom+'!';
             console.log(zoom,'zoomed')
@@ -36,5 +31,12 @@ angular.module('doc.ui-map', ['ui.map' ])
         $scope.setMarkerPosition = function(marker, lat, lng) {
             console.log("test")
             marker.setPosition(new google.maps.LatLng(lat, lng));
+        };
+        $scope.addMarker = function ($event, $params) {
+            $scope.myMarkers.push(new google.maps.Marker({
+                map: $scope.myMap,
+                position: $params[0].latLng
+            }));
+
         };
     }]);

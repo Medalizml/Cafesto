@@ -7,11 +7,25 @@
 
 
 <h1 style="opacity: 0.7">Restaurant Name</h1>
-            <div>
-            <div ><ng-include src="'servicesProvidersViews/Business/menu.html'"/></div>
-            <div ><ng-include src="'servicesProvidersViews/Business/list/map.html'"/></div>
-            <div> <ng-include src="'servicesProvidersViews/Business/list/listofestablishment.html'"/></div>
 
+    <div class="container-fluid">
+    <div class="row-fluid thumbnail">
+
+            <div class="zero-clipboard  ">
+
+                <div class="btn-clipboard ">
+                    <a href="#" style="color: #ffffff">Add new establishment <i class="glyphicon glyphicon-plus"></i></a>
+                </div>
+            </div>
+        <div class="page-header" ><h4>List of establishments</h4></div>
+
+            <div class="inline">
+        <div  > <ng-include src="'servicesProvidersViews/Business/list/establishment.html'"/></div>
+        <div  > <ng-include src="'servicesProvidersViews/Business/list/establishment.html'"/></div>
+        <div  > <ng-include src="'servicesProvidersViews/Business/list/establishment.html'"/></div>
+        <div > <ng-include src="'servicesProvidersViews/Business/list/establishment.html'"/></div>
+            </div>
+        </div>
         </div>
 
 

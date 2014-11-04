@@ -13,5 +13,6 @@ appServicesProviders.config(function($routeProvider){
     $routeProvider.when('/profile',{templateUrl:'servicesProvidersViews/Business/Profile.html',controller:'ServiceProviderControllers'})
     $routeProvider.when('/business/dishes',{templateUrl:'servicesProvidersViews/Business/Dishes/dishesList.html',controller:'ServiceProviderControllers'})
     $routeProvider.when('/business/services',{templateUrl:'servicesProvidersViews/Business/services/listservices.html',controller:'ServiceProviderControllers'})
-
+    $routeProvider.when('/business/establishmentshow',{templateUrl:'servicesProvidersViews/Business/list/establishmentshow.html',controller:'ServiceProviderControllers'})
+    $routeProvider.when('/business/addnewestablishmentmarker',{templateUrl:'servicesProvidersViews/Business/addestablishment/addmarker.html',controller:'ServiceProviderControllers'})
 });
